@@ -59,7 +59,7 @@
 }
 
 .section {
-  width: 100vw; /* Full width of the viewport */
+  /* width: 100vw; Full width of the viewport */
   /* height: 100vh; Full height of the viewport */
   scroll-snap-align: start; /* Snaps each section to the start */
   transition: opacity 1s ease-in-out;
