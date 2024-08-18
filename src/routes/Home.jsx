@@ -33,9 +33,11 @@ const Home = () => {
   }, []);
 
   const handleScroll = (e) => {
-    const currentScrollPos = e.target.scrollTop;
-    const maxScrollPos = e.target.scrollHeight - e.target.clientHeight;
+    const container = e.target;
+    const currentScrollPos = container.scrollTop;
+    const maxScrollPos = container.scrollHeight - container.clientHeight;
 
+    // If the user has scrolled to the bottom, snap to the next section
     if (currentScrollPos >= maxScrollPos) {
       const currentIndex = sectionRefs.current.findIndex(
         (ref) => ref.dataset.section === activeSection
@@ -48,13 +50,10 @@ const Home = () => {
   };
 
   return (
-    <div
-      className="container relative overflow-y-auto bg-transparent"
-      onScroll={handleScroll}
-    >
+    <div className="container relative bg-transparent" onScroll={handleScroll}>
       <Navbar />
       <div
-        className={`section transition-transform duration-1000 ease-in-out ${
+        className={`section transition-opacity duration-1000 ease-in-out ${
           activeSection === "profile" ? "opacity-100" : "opacity-0"
         }`}
         data-section="profile"

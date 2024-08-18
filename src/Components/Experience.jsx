@@ -1,4 +1,5 @@
 import React from "react";
+import ExperienceDiv from "./ExperienceDiv";
 
 const experiences = [
   {
@@ -43,7 +44,7 @@ const Experience = () => {
       <div className="relative w-full max-w-4xl">
         {/* Central Timeline Line */}
         <div className="absolute inset-0 flex justify-center">
-          <div className="w-1 h-full bg-gray-600"></div>
+          <div className="w-1 h-full bg-green-600"></div>
         </div>
         <div className="relative space-y-12">
           {experiences.map((exp, index) => (
@@ -53,22 +54,17 @@ const Experience = () => {
                 index % 2 === 0 ? "justify-start" : "justify-end"
               } w-full`}
             >
-              {/* Dot on the Timeline */}
-              <div className="w-4 h-4 bg-green-400 rounded-full border-4 border-gray-900"></div>
-              <div
-                className={`ml-6 w-64 h-64 bg-gray-800 border-2 border-green-400 rounded-lg p-4 ${
-                  index % 2 === 0 ? "text-left" : "text-right"
-                }`}
-              >
-                <h2 className="text-xl font-semibold text-green-400">
-                  {exp.title}
-                </h2>
-                <h3 className="text-lg font-medium text-gray-300">
-                  {exp.company}
-                </h3>
-                <p className="text-sm text-gray-400">{exp.duration}</p>
-                <p className="mt-2 text-gray-300">{exp.description}</p>
-              </div>
+              {index % 2 === 0 ? (
+                <>
+                  <ExperienceDiv exp={exp} index={index} />
+                  <div className="w-4 h-4 bg-green-400 rounded-full border-4 border-gray-900"></div>
+                </>
+              ) : (
+                <>
+                  <div className="w-4 h-4 bg-green-400 rounded-full border-4 border-gray-900"></div>
+                  <ExperienceDiv exp={exp} index={index} />
+                </>
+              )}
             </div>
           ))}
         </div>
