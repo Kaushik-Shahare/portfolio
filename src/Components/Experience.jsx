@@ -51,7 +51,9 @@ const experiences = [
 const Experience = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-6">
-      <h1 className="text-5xl font-bold mb-6 text-green-400">Experience</h1>
+      <h1 className="text-5xl font-bold mb-6 text-green-400 pt-20">
+        Experience
+      </h1>
       <div className="relative w-full max-w-4xl">
         {/* Central Timeline Line */}
         <div className="absolute inset-0 flex justify-center">

@@ -37,7 +37,7 @@ const Projects = () => {
 
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen p-4 ">
-      <h1 className="text-4xl font-bold mb-8 text-green-400 glitch-text">
+      <h1 className="text-4xl font-bold mb-8 text-green-400 glitch-text pt-20">
         My Projects
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
