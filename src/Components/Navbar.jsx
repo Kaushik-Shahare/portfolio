@@ -1,7 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <nav className="bg-black text-green-400 p-4 flex justify-between items-center fixed top-0 w-full z-10 shadow-lg">
       {/* Logo with animation */}
@@ -11,40 +17,49 @@ const Navbar = () => {
 
       <ul className="list-none flex gap-12 mr-10">
         <li>
-          <Link
-            to="/"
-            className="text-green-400 text-xl no-underline hover:text-green-300 relative group"
+          <div
+            onClick={() => scrollToSection("home")}
+            className="text-green-400 text-xl no-underline hover:text-green-300 relative group cursor-pointer"
           >
             Home
             <span className="absolute left-0 bottom-0 w-full h-0.5 bg-green-300 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
-          </Link>
+          </div>
         </li>
         <li>
-          <Link
-            to="/about"
-            className="text-green-400 text-xl no-underline hover:text-green-300 relative group"
+          <div
+            onClick={() => scrollToSection("about")}
+            className="text-green-400 text-xl no-underline hover:text-green-300 relative group cursor-pointer"
           >
             About Me
             <span className="absolute left-0 bottom-0 w-full h-0.5 bg-green-300 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
-          </Link>
+          </div>
         </li>
         <li>
-          <Link
-            to="/projects"
-            className="text-green-400 text-xl no-underline hover:text-green-300 relative group"
+          <div
+            onClick={() => scrollToSection("experience")}
+            className="text-green-400 text-xl no-underline hover:text-green-300 relative group cursor-pointer"
+          >
+            Experience
+            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-green-300 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+          </div>
+        </li>
+        <li>
+          <div
+            onClick={() => scrollToSection("projects")}
+            className="text-green-400 text-xl no-underline hover:text-green-300 relative group cursor-pointer"
           >
             Projects
             <span className="absolute left-0 bottom-0 w-full h-0.5 bg-green-300 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
-          </Link>
+          </div>
         </li>
         <li>
-          <Link
-            to="/contact"
-            className="text-green-400 text-xl no-underline hover:text-green-300 relative group"
+          <div
+            onClick={() => scrollToSection("contact")}
+            className="text-green-400 text-xl no-underline hover:text-green-300 relative group cursor-pointer"
           >
-            Contact Me
+            Contact
             <span className="absolute left-0 bottom-0 w-full h-0.5 bg-green-300 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
-          </Link>
+          </div>
         </li>
       </ul>
     </nav>

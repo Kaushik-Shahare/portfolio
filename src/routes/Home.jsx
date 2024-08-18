@@ -62,6 +62,7 @@ const Home = () => {
           }`}
           data-section="profile"
           ref={(el) => (sectionRefs.current[0] = el)}
+          id="home"
         >
           <Profile />
         </div>
@@ -71,6 +72,7 @@ const Home = () => {
           }`}
           data-section="aboutme"
           ref={(el) => (sectionRefs.current[1] = el)}
+          id="about"
         >
           <AboutMe />
         </div>
@@ -80,6 +82,7 @@ const Home = () => {
           }`}
           data-section="experience"
           ref={(el) => (sectionRefs.current[2] = el)}
+          id="experience"
         >
           <Experience />
         </div>
@@ -89,6 +92,7 @@ const Home = () => {
           }`}
           data-section="projects"
           ref={(el) => (sectionRefs.current[3] = el)}
+          id="projects"
         >
           <Projects />
         </div>
