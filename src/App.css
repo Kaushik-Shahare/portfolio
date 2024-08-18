@@ -43,6 +43,7 @@
   height: 100vh;
   scroll-snap-type: y mandatory;
   overflow-y: auto;
+  scroll-behavior: smooth; /* Enables smooth scrolling */
 }
 
 /* Hides the scroll bar across different browsers */
@@ -57,7 +58,7 @@
 
 .section {
   height: 100vh;
-  scroll-snap-align: start;
+  scroll-snap-align: start; /* Snaps each section to the start */
   transition: opacity 1s ease-in-out;
   opacity: 0;
 }
