@@ -9,6 +9,7 @@ const ExperienceDiv = ({ exp, index }) => {
     >
       <h2 className="text-xl font-semibold text-green-400">{exp.title}</h2>
       <h3 className="text-lg font-medium text-gray-300">{exp.company}</h3>
+      <p className="text-sm text-gray-300">{exp.location}</p>
       <p className="text-sm text-gray-400">{exp.duration}</p>
       <p className="mt-2 text-gray-300">{exp.description}</p>
     </div>

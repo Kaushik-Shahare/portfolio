@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import "./Profile.css";
 
 const Profile = () => {
   const [currentSkillIndex, setCurrentSkillIndex] = useState(0);
@@ -78,10 +79,14 @@ const Profile = () => {
 
       {/* Profile Content */}
       <div className="relative flex justify-between w-full h-80 px-4 z-10">
-        <div className="text-left ml-40 h-40">
-          <h1 className="text-8xl font-bold text-green-400 mb-2 animate-bounce-in glow-green">
-            Kaushik Shahare
-          </h1>
+        <div className="text-left ml-20 mt-20 h-40">
+          <div class="hero-container mb-8">
+            <h2 class="hero glitch layers text-7xl" data-text="Kaushik Shahare">
+              <span className="text-7xl font-bold animate-bounce-in glow-green">
+                Kaushik Shahare
+              </span>
+            </h2>
+          </div>
           <p
             className={`text-5xl text-green-500 transition-opacity duration-500 ${
               fade ? "opacity-100" : "opacity-0"

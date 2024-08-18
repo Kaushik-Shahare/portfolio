@@ -7,6 +7,7 @@ const experiences = [
     id: "experience-1",
     title: "Backend Developer Intern (Express)",
     company: "Mr. Loggage",
+    location: "Gujrat, India (Remote)",
     duration: "June 2024 - Present",
     description:
       "Working on backend services using Express. Involved in API development, database management, and debugging.",
@@ -15,34 +16,35 @@ const experiences = [
     id: "experience-2",
     title: "Technical Intern (Backend)",
     company: "Storyvord Ltd.",
+    location: "London, UK (Remote)",
     duration: "July 2024 - Present",
     description:
       "Engaged in backend development with a focus on server-side code, API development, and system integration.",
   },
-  {
-    id: "experience-3",
-    title: "Technical Intern (Backend)",
-    company: "Storyvord Ltd.",
-    duration: "July 2024 - Present",
-    description:
-      "Engaged in backend development with a focus on server-side code, API development, and system integration.",
-  },
-  {
-    id: "experience-4",
-    title: "Technical Intern (Backend)",
-    company: "Storyvord Ltd.",
-    duration: "July 2024 - Present",
-    description:
-      "Engaged in backend development with a focus on server-side code, API development, and system integration.",
-  },
-  {
-    id: "experience-5",
-    title: "Technical Intern (Backend)",
-    company: "Storyvord Ltd.",
-    duration: "July 2024 - Present",
-    description:
-      "Engaged in backend development with a focus on server-side code, API development, and system integration.",
-  },
+  //   {
+  //     id: "experience-3",
+  //     title: "Technical Intern (Backend)",
+  //     company: "Storyvord Ltd.",
+  //     duration: "July 2024 - Present",
+  //     description:
+  //       "Engaged in backend development with a focus on server-side code, API development, and system integration.",
+  //   },
+  //   {
+  //     id: "experience-4",
+  //     title: "Technical Intern (Backend)",
+  //     company: "Storyvord Ltd.",
+  //     duration: "July 2024 - Present",
+  //     description:
+  //       "Engaged in backend development with a focus on server-side code, API development, and system integration.",
+  //   },
+  //   {
+  //     id: "experience-5",
+  //     title: "Technical Intern (Backend)",
+  //     company: "Storyvord Ltd.",
+  //     duration: "July 2024 - Present",
+  //     description:
+  //       "Engaged in backend development with a focus on server-side code, API development, and system integration.",
+  //   },
   // Add more experiences as needed
 ];
 
