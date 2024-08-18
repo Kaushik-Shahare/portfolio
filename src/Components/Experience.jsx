@@ -1,5 +1,6 @@
 import React from "react";
 import ExperienceDiv from "./ExperienceDiv";
+import Xarrow from "react-xarrows";
 
 const experiences = [
   {
@@ -19,7 +20,7 @@ const experiences = [
       "Engaged in backend development with a focus on server-side code, API development, and system integration.",
   },
   {
-    id: "experience-2",
+    id: "experience-3",
     title: "Technical Intern (Backend)",
     company: "Storyvord Ltd.",
     duration: "July 2024 - Present",
@@ -27,7 +28,15 @@ const experiences = [
       "Engaged in backend development with a focus on server-side code, API development, and system integration.",
   },
   {
-    id: "experience-2",
+    id: "experience-4",
+    title: "Technical Intern (Backend)",
+    company: "Storyvord Ltd.",
+    duration: "July 2024 - Present",
+    description:
+      "Engaged in backend development with a focus on server-side code, API development, and system integration.",
+  },
+  {
+    id: "experience-5",
     title: "Technical Intern (Backend)",
     company: "Storyvord Ltd.",
     duration: "July 2024 - Present",
@@ -44,7 +53,7 @@ const Experience = () => {
       <div className="relative w-full max-w-4xl">
         {/* Central Timeline Line */}
         <div className="absolute inset-0 flex justify-center">
-          <div className="w-1 h-full bg-green-600"></div>
+          <div className="w-1 h-full bg-green-600" id="timeline"></div>
         </div>
         <div className="relative space-y-12">
           {experiences.map((exp, index) => (
@@ -57,15 +66,31 @@ const Experience = () => {
               {index % 2 === 0 ? (
                 <>
                   <ExperienceDiv exp={exp} index={index} />
-                  <div className="w-4 h-4 bg-green-400 rounded-full border-4 border-gray-900"></div>
+                  <div
+                    id={`dot-${index}`}
+                    className="w-4 h-4 bg-green-400 rounded-full border-4 border-gray-900"
+                  />
                 </>
               ) : (
                 <>
-                  <div className="w-4 h-4 bg-green-400 rounded-full border-4 border-gray-900"></div>
+                  <div
+                    id={`dot-${index}`}
+                    className="w-4 h-4 bg-green-400 rounded-full border-4 border-gray-900"
+                  />
                   <ExperienceDiv exp={exp} index={index} />
                 </>
               )}
             </div>
+          ))}
+          {/* Connect dots to central line */}
+          {experiences.map((_, index) => (
+            <Xarrow
+              key={`arrow-${index}`}
+              start="timeline"
+              end={`dot-${index}`}
+              color="lightgreen"
+              strokeWidth={2}
+            />
           ))}
         </div>
       </div>
