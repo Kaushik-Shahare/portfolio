@@ -50,43 +50,48 @@ const Home = () => {
   };
 
   return (
-    <div className="container relative bg-transparent" onScroll={handleScroll}>
+    <div className="flex items-center justify-center min-h-screen">
       <Navbar />
       <div
-        className={`section transition-opacity duration-1000 ease-in-out ${
-          activeSection === "profile" ? "opacity-100" : "opacity-0"
-        }`}
-        data-section="profile"
-        ref={(el) => (sectionRefs.current[0] = el)}
+        className="container relative bg-transparent"
+        onScroll={handleScroll}
       >
-        <Profile />
-      </div>
-      <div
-        className={`section transition-opacity duration-1000 ease-in-out ${
-          activeSection === "aboutme" ? "opacity-100" : "opacity-0"
-        }`}
-        data-section="aboutme"
-        ref={(el) => (sectionRefs.current[1] = el)}
-      >
-        <AboutMe />
-      </div>
-      <div
-        className={`section transition-opacity duration-1000 ease-in-out ${
-          activeSection === "experience" ? "opacity-100" : "opacity-0"
-        }`}
-        data-section="experience"
-        ref={(el) => (sectionRefs.current[2] = el)}
-      >
-        <Experience />
-      </div>
-      <div
-        className={`section transition-opacity duration-1000 ease-in-out ${
-          activeSection === "projects" ? "opacity-100" : "opacity-0"
-        }`}
-        data-section="projects"
-        ref={(el) => (sectionRefs.current[3] = el)}
-      >
-        <Projects />
+        <div
+          className={`section transition-opacity duration-1000 ease-in-out ${
+            activeSection === "profile" ? "opacity-100" : "opacity-0"
+          }`}
+          data-section="profile"
+          ref={(el) => (sectionRefs.current[0] = el)}
+        >
+          <Profile />
+        </div>
+        <div
+          className={`section transition-opacity duration-1000 ease-in-out ${
+            activeSection === "aboutme" ? "opacity-100" : "opacity-0"
+          }`}
+          data-section="aboutme"
+          ref={(el) => (sectionRefs.current[1] = el)}
+        >
+          <AboutMe />
+        </div>
+        <div
+          className={`section transition-opacity duration-1000 ease-in-out ${
+            activeSection === "experience" ? "opacity-100" : "opacity-0"
+          }`}
+          data-section="experience"
+          ref={(el) => (sectionRefs.current[2] = el)}
+        >
+          <Experience />
+        </div>
+        <div
+          className={`section transition-opacity duration-1000 ease-in-out ${
+            activeSection === "projects" ? "opacity-100" : "opacity-0"
+          }`}
+          data-section="projects"
+          ref={(el) => (sectionRefs.current[3] = el)}
+        >
+          <Projects />
+        </div>
       </div>
     </div>
   );
