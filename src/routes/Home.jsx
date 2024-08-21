@@ -50,10 +50,10 @@ const Home = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-transparent">
       <Navbar />
       <div
-        className="container relative bg-transparent"
+        className="container relative flex flex-col space-y-16 md:space-y-24 lg:space-y-32 p-4 md:p-8 lg:p-12"
         onScroll={handleScroll}
       >
         <div

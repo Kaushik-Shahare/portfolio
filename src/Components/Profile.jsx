@@ -47,7 +47,7 @@ const Profile = () => {
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen p-4">
       {/* Social Media Vertical Bar */}
-      <div className="fixed right-10 top-1/2 transform -translate-y-1/2 flex flex-col space-y-5 z-20">
+      <div className="fixed right-4 top-1/2 transform -translate-y-1/2 flex flex-col space-y-5 ">
         <a
           href="https://linkedin.com/in/kaushik-shahare-84bba7267"
           className="text-green-400 hover:text-green-500 transition-colors duration-300 hover:glow-green"
@@ -55,7 +55,7 @@ const Profile = () => {
           rel="noopener noreferrer"
           style={{ filter: "drop-shadow(0 0 5px #00ff00)" }}
         >
-          <FaLinkedin size={30} />
+          <FaLinkedin size={24} className="sm:size-30" />
         </a>
         <a
           href="https://github.com/Kaushik-Shahare"
@@ -64,7 +64,7 @@ const Profile = () => {
           rel="noopener noreferrer"
           style={{ filter: "drop-shadow(0 0 5px #00ff00)" }}
         >
-          <FaGithub size={30} />
+          <FaGithub size={24} className="sm:size-30" />
         </a>
         <a
           href="https://instagram.com/0_kaushik_"
@@ -73,22 +73,25 @@ const Profile = () => {
           rel="noopener noreferrer"
           style={{ filter: "drop-shadow(0 0 5px #00ff00)" }}
         >
-          <FaInstagram size={30} />
+          <FaInstagram size={24} className="sm:size-30" />
         </a>
       </div>
 
       {/* Profile Content */}
-      <div className="relative flex justify-between w-full h-80 px-4 z-10">
-        <div className="text-left ml-20 mt-20 h-40">
-          <div class="hero-container mb-8">
-            <h2 class="hero glitch layers text-7xl" data-text="Kaushik Shahare">
-              <span className="text-7xl font-bold animate-bounce-in glow-green">
+      <div className="relative flex flex-col-reverse sm:flex-row justify-between w-full sm:h-80 px-4 z-10 items-center">
+        <div className="text-left sm:ml-10 mt-8 sm:mt-20 h-40">
+          <div className="hero-container mb-4 sm:mb-8">
+            <h2
+              className="hero glitch layers text-4xl sm:text-7xl"
+              data-text="Kaushik Shahare"
+            >
+              <span className="text-4xl sm:text-7xl font-bold animate-bounce-in glow-green">
                 Kaushik Shahare
               </span>
             </h2>
           </div>
           <p
-            className={`text-5xl text-green-500 transition-opacity duration-500 ${
+            className={`text-3xl sm:text-5xl text-green-500 transition-opacity duration-500 ${
               fade ? "opacity-100" : "opacity-0"
             } animate-fade-in-out glow-green`}
           >
@@ -97,7 +100,7 @@ const Profile = () => {
         </div>
 
         <div
-          className="overflow-hidden rounded-full mr-40 transform-gpu relative"
+          className="overflow-hidden rounded-full mt-8 sm:mt-0 sm:mr-10 transform-gpu relative"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           ref={imgRef}
@@ -105,10 +108,9 @@ const Profile = () => {
         >
           {/* Profile Picture */}
           <img
-            // src="/Profile.jpg"
             src="/Profile1.png"
             alt="Profile"
-            className="object-cover w-80 h-80 z-10"
+            className="object-cover w-40 h-40 sm:w-80 sm:h-80 z-10"
             style={{ filter: "drop-shadow(0 0 10px #00ff00)" }}
           />
 
