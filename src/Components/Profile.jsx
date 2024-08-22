@@ -82,10 +82,10 @@ const Profile = () => {
         <div className="text-left sm:ml-10 mt-8 sm:mt-20 h-40">
           <div className="hero-container mb-4 sm:mb-8">
             <h2
-              className="hero glitch layers text-4xl sm:text-7xl"
+              className="hero glitch layers text-4xl sm:text-7xl md:text-6xl"
               data-text="Kaushik Shahare"
             >
-              <span className="text-4xl sm:text-7xl font-bold animate-bounce-in glow-green">
+              <span className="text-4xl sm:text-7xl md:text-6xl font-bold animate-bounce-in glow-green">
                 Kaushik Shahare
               </span>
             </h2>

@@ -1,4 +1,7 @@
-/* Projects.css */
+/* Matrix Theme Background */
+.matrix-theme {
+  color: #00ff00;
+}
 
 /* Glitch Text Effect */
 .glitch-text {
@@ -89,6 +92,8 @@
 .glitch-box {
   position: relative;
   overflow: hidden;
+  border: 1px solid #00ff00; /* Green border */
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
 }
 
 .glitch-box::before,
@@ -105,21 +110,13 @@
 
 .glitch-box::before {
   filter: blur(2px);
-  background: linear-gradient(
-    45deg,
-    rgba(0, 255, 0, 0.5),
-    rgba(255, 0, 255, 0.5)
-  );
+  background: linear-gradient(45deg, rgba(0, 255, 0, 0.2), rgba(0, 0, 0, 0.8));
   animation: glitch-box-anim-1 3s infinite;
 }
 
 .glitch-box::after {
   filter: blur(2px);
-  background: linear-gradient(
-    -45deg,
-    rgba(0, 255, 0, 0.5),
-    rgba(255, 0, 255, 0.5)
-  );
+  background: linear-gradient(-45deg, rgba(0, 255, 0, 0.2), rgba(0, 0, 0, 0.8));
   animation: glitch-box-anim-2 3s infinite;
 }
 

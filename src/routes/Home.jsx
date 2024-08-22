@@ -102,7 +102,7 @@ const Home = () => {
             activeSection === "contactMe" ? "opacity-100" : "opacity-0"
           }`}
           data-section="contactMe"
-          ref={(el) => (sectionRefs.current[3] = el)}
+          ref={(el) => (sectionRefs.current[4] = el)}
           id="contactMe"
         >
           <ContactMe />

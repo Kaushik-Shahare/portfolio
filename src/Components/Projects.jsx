@@ -36,7 +36,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen p-4">
+    <div className="relative flex flex-col items-center justify-center min-h-screen p-4 matrix-theme">
       <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-green-400 glitch-text pt-20 z-20">
         My Projects
       </h1>
@@ -65,8 +65,6 @@ const Projects = () => {
           </div>
         ))}
       </div>
-      {/* Matrix Rain Overlay */}
-      {/* <div className="absolute inset-0 z-10 pointer-events-none animate-matrix-rain opacity-50"></div> */}
     </div>
   );
 };
