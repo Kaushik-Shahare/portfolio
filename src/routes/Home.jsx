@@ -4,6 +4,7 @@ import Profile from "../Components/Profile";
 import AboutMe from "../Components/AboutMe";
 import Projects from "../Components/Projects";
 import Experience from "../Components/Experience";
+import ContactMe from "../Components/ContactMe";
 
 const Home = () => {
   const [activeSection, setActiveSection] = useState(null);
@@ -95,6 +96,16 @@ const Home = () => {
           id="projects"
         >
           <Projects />
+        </div>
+        <div
+          className={`section transition-opacity duration-1000 ease-in-out ${
+            activeSection === "contactMe" ? "opacity-100" : "opacity-0"
+          }`}
+          data-section="contactMe"
+          ref={(el) => (sectionRefs.current[3] = el)}
+          id="contactMe"
+        >
+          <ContactMe />
         </div>
       </div>
     </div>

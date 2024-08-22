@@ -37,14 +37,14 @@ const Projects = () => {
 
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen p-4">
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-green-400 glitch-text pt-20">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-green-400 glitch-text pt-20 z-20">
         My Projects
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-screen-lg">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-screen-lg z-20">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="relative bg-gray-900 p-6 rounded-lg shadow-lg border border-green-500 glitch-box flex flex-col justify-between"
+            className="relative bg-gray-900 p-6 rounded-lg shadow-lg border border-green-500 glitch-box flex flex-col justify-between z-20"
           >
             <div>
               <h2 className="text-xl sm:text-2xl font-bold mb-2 text-green-400 glitch-text">
@@ -66,7 +66,7 @@ const Projects = () => {
         ))}
       </div>
       {/* Matrix Rain Overlay */}
-      <div className="absolute inset-0 z-0 pointer-events-none animate-matrix-rain"></div>
+      {/* <div className="absolute inset-0 z-10 pointer-events-none animate-matrix-rain opacity-50"></div> */}
     </div>
   );
 };

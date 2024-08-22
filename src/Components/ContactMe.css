@@ -1,0 +1,14 @@
+/* ContactMe.css */
+.matrix-theme {
+  position: relative;
+}
+
+.glitch-text {
+  color: #00ff00;
+  text-shadow: 0 0 2px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00;
+}
+
+input,
+textarea {
+  color: #00ff00;
+}
