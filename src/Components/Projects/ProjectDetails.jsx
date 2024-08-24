@@ -31,9 +31,9 @@ const ProjectDetails = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-transparent text-left">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-transparent text-left pb-20">
       <Navbar />
-      <div className="container relative flex flex-col space-y-16  p-4 md:p-8 lg:p-12">
+      <div className="container relative flex flex-col space-y-16 p-4 md:p-8 lg:p-12">
         {/* Title Section */}
         <div className="p-4 text-left w-full md:w-3/4 lg:w-2/3 mx-auto">
           <h1 className="text-3xl font-bold mb-4">{project.title}</h1>
@@ -41,25 +41,27 @@ const ProjectDetails = () => {
 
         {/* Photo and Video Carousel Section */}
         <div className="space-y-4 flex flex-col items-center">
-          <div className="carousel w-full md:w-3/4 lg:w-2/3">
+          <div className="carousel w-full md:w-3/4 lg:w-2/3 bg-gray-900">
             <Slider {...settings}>
-              <div>
-                <video
-                  controls
-                  className="w-full h-auto rounded-lg"
-                  onPlay={handleVideoPlay}
-                  onPause={handleVideoPause}
-                >
-                  <source src={project.video} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
+              {project.video.map((video, index) => (
+                <div key={index}>
+                  <video
+                    controls
+                    className="w-full h-auto rounded-lg border-2 border-gray-500 p-2"
+                    onPlay={handleVideoPlay}
+                    onPause={handleVideoPause}
+                  >
+                    <source src={video} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              ))}
               {project.photos.map((photo, index) => (
                 <div key={index}>
                   <img
                     src={photo}
                     alt={`Project ${project.title} - Photo ${index + 1}`}
-                    className="w-full h-auto rounded-lg"
+                    className="w-full h-auto rounded-lg border-2 border-gray-500 p-2"
                   />
                 </div>
               ))}
@@ -90,7 +92,7 @@ const ProjectDetails = () => {
 
         <div className="flex flex-row w-full md:w-3/4 lg:w-2/3 mx-auto">
           {/* Tech Stack Section */}
-          <div className="p-4 text-left ">
+          <div className="p-4 text-left">
             <h2 className="text-2xl font-bold mb-2">Tech Stack</h2>
             <ul className="list-disc list-inside text-lg">
               {project.techStack.map((tech, index) => (

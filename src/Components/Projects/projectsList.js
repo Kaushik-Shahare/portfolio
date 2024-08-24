@@ -9,10 +9,20 @@ const projects = [
     link: "https://evt-manager.onrender.com/",
     gitHub: "https://github.com/Kaushik-Shahare/Event-Manager",
     photos: [
-      "https://example.com/photo1.jpg",
-      "https://example.com/photo2.jpg",
+      "https://raw.githubusercontent.com/Kaushik-Shahare/Event-Manager/main/demo/Images/signin.png",
+      "https://raw.githubusercontent.com/Kaushik-Shahare/Event-Manager/main/demo/Images/home.png",
+      "https://raw.githubusercontent.com/Kaushik-Shahare/Event-Manager/main/demo/Images/evtManagement.png",
+      "https://raw.githubusercontent.com/Kaushik-Shahare/Event-Manager/main/demo/Images/createEvent.png",
+      "https://raw.githubusercontent.com/Kaushik-Shahare/Event-Manager/main/demo/Images/userManagement.png",
+      "https://raw.githubusercontent.com/Kaushik-Shahare/Event-Manager/main/demo/Images/Lhome.png",
+      "https://raw.githubusercontent.com/Kaushik-Shahare/Event-Manager/main/demo/Images/LevtManagement.png",
+      "https://raw.githubusercontent.com/Kaushik-Shahare/Event-Manager/main/demo/Images/LcreateEvent.png",
+      "https://raw.githubusercontent.com/Kaushik-Shahare/Event-Manager/main/demo/Images/LuserManagement.png",
     ],
-    video: "https://example.com/video.mp4",
+    video: [
+      "https://raw.githubusercontent.com/Kaushik-Shahare/Event-Manager/main/demo/Videos/Admin.mov",
+      "https://raw.githubusercontent.com/Kaushik-Shahare/Event-Manager/main/demo/Videos/Default.mov",
+    ],
     techStack: ["React", "Node.js", "Express", "MongoDB"],
     libraries: ["Socket.io", "Mongoose", "Redux"],
     additionalInfo:
@@ -31,7 +41,7 @@ const projects = [
       "https://example.com/chatapp1.jpg",
       "https://example.com/chatapp2.jpg",
     ],
-    video: "https://example.com/chatappvideo.mp4",
+    video: ["https://example.com/chatappvideo.mp4"],
     techStack: ["React", "Socket.io", "Node.js"],
     libraries: ["Emoji-Mart", "Axios"],
     additionalInfo:
@@ -50,7 +60,7 @@ const projects = [
       "https://example.com/portfolio1.jpg",
       "https://example.com/portfolio2.jpg",
     ],
-    video: "https://example.com/portfolio.mp4",
+    video: ["https://example.com/portfolio.mp4"],
     techStack: ["React", "Next.js", "Tailwind CSS"],
     libraries: ["Framer Motion", "React Router"],
     additionalInfo:
@@ -69,7 +79,7 @@ const projects = [
       "https://example.com/news-summary1.jpg",
       "https://example.com/news-summary2.jpg",
     ],
-    video: "https://example.com/news-summary.mp4",
+    video: ["https://example.com/news-summary.mp4"],
     techStack: ["Python", "Django", "BeautifulSoup"],
     libraries: ["Newspaper3k", "Requests"],
     additionalInfo:
@@ -88,7 +98,7 @@ const projects = [
       "https://example.com/virtual-piano1.jpg",
       "https://example.com/virtual-piano2.jpg",
     ],
-    video: "https://example.com/virtual-piano.mp4",
+    video: ["https://example.com/virtual-piano.mp4"],
     techStack: ["Python", "OpenCV", "TensorFlow"],
     libraries: ["NumPy", "Scikit-learn"],
     additionalInfo:

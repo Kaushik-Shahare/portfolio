@@ -16,7 +16,7 @@ const Projects = () => {
             className="relative bg-gray-900 p-6 rounded-lg shadow-lg border border-green-500 glitch-box flex flex-col justify-between z-20"
           >
             <div>
-              <h2 className="text-xl sm:text-2xl font-bold mb-2 text-green-400 glitch-text">
+              <h2 className="text-xl sm:text-2xl font-bold mb-2 text-green-400 ">
                 {project.title}
               </h2>
               <p className="text-gray-300 text-sm sm:text-base mb-4">
@@ -25,9 +25,9 @@ const Projects = () => {
             </div>
             <Link
               to={`/projects/${project.id}`}
-              className="text-pink-500 hover:underline glitch-text mt-auto"
+              className="text-green-500 hover:underline  mt-auto"
             >
-              Details
+              View Details
             </Link>
           </div>
         ))}
