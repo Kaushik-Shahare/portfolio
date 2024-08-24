@@ -38,10 +38,14 @@ const projects = [
     link: "https://kaushik-shahare-chatapp.onrender.com/signin",
     gitHub: "https://github.com/Kaushik-Shahare/ChatApp",
     photos: [
-      "https://example.com/chatapp1.jpg",
-      "https://example.com/chatapp2.jpg",
+      "https://raw.githubusercontent.com/Kaushik-Shahare/ChatApp/main/demo/Images/signin.png",
+      "https://raw.githubusercontent.com/Kaushik-Shahare/ChatApp/main/demo/Images/home.png",
+      "https://raw.githubusercontent.com/Kaushik-Shahare/ChatApp/main/demo/Images/chats.png",
+      "https://raw.githubusercontent.com/Kaushik-Shahare/ChatApp/main/demo/Images/profile.png",
     ],
-    video: ["https://example.com/chatappvideo.mp4"],
+    video: [
+      "https://raw.githubusercontent.com/Kaushik-Shahare/ChatApp/main/demo/Videos/LiveChat.mov",
+    ],
     techStack: ["React", "Socket.io", "Node.js"],
     libraries: ["Emoji-Mart", "Axios"],
     additionalInfo:
@@ -56,10 +60,7 @@ const projects = [
       "My portfolio website serves as a professional platform to showcase my skills, projects, and experience. Built using React and Next.js, the website features a modern design with smooth animations and intuitive navigation. It includes detailed sections for my resume, project portfolio, and contact information, making it easy for potential employers or collaborators to learn more about me.",
     link: "https://portfolio-lime-nine-27.vercel.app/",
     gitHub: "https://github.com/Kaushik-Shahare/portfolio",
-    photos: [
-      "https://example.com/portfolio1.jpg",
-      "https://example.com/portfolio2.jpg",
-    ],
+    photos: ["https://raw.githubusercontent.com/Kaushik-Shahare/ChatApp/"],
     video: ["https://example.com/portfolio.mp4"],
     techStack: ["React", "Next.js", "Tailwind CSS"],
     libraries: ["Framer Motion", "React Router"],
@@ -75,11 +76,10 @@ const projects = [
       "The News Summary project is a powerful tool for extracting and summarizing news articles. Users can either capture a photo of a news article or paste the URL of an article to receive a summary that includes the title, date, author, and main content. The project leverages Python, Django, and web scraping techniques to provide users with concise and relevant information from various news sources.",
     link: "https://example.com/project-four",
     gitHub: "https://github.com/Kaushik-Shahare/News-Summarization-WebSite",
-    photos: [
-      "https://example.com/news-summary1.jpg",
-      "https://example.com/news-summary2.jpg",
+    photos: ["https://example.com/news-summary1.jpg"],
+    video: [
+      "https://raw.githubusercontent.com/Kaushik-Shahare/News_Summarizar/master/demo_video/imageToSummary.mp4",
     ],
-    video: ["https://example.com/news-summary.mp4"],
     techStack: ["Python", "Django", "BeautifulSoup"],
     libraries: ["Newspaper3k", "Requests"],
     additionalInfo:
