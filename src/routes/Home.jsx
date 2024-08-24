@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Navbar from "../Components/Navbar";
 import Profile from "../Components/Profile";
 import AboutMe from "../Components/AboutMe";
-import Projects from "../Components/Projects";
+import Projects from "../Components/Projects/Projects";
 import Experience from "../Components/Experience";
 import ContactMe from "../Components/ContactMe";
 

@@ -1,12 +1,25 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Updated import
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate(); // Updated hook
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Navigate to the home page
+      navigate("/");
+
+      // Retry scrolling after a short delay
+      setTimeout(() => {
+        const retrySection = document.getElementById(id);
+        if (retrySection) {
+          retrySection.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100); // Adjust the delay as needed
     }
   };
 

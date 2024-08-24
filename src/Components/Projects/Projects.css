@@ -89,7 +89,7 @@
 }
 
 /* Glitch Box Effect */
-.glitch-box {
+.glitch-box:hover {
   position: relative;
   overflow: hidden;
   border: 1px solid #00ff00; /* Green border */

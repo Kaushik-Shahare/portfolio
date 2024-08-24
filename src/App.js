@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./routes/Home";
 import MatrixRain from "./routes/MatrixRain";
+import ProjectDetails from "./Components/Projects/ProjectDetails";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="*" element={<Home />} />
-          {/* <Route path="about" element={<About />} /> */}
+          <Route path="/projects/:projectId" element={<ProjectDetails />} />
         </Routes>
       </BrowserRouter>
     </div>
