@@ -23,16 +23,8 @@ const projects = [
       "https://raw.githubusercontent.com/Kaushik-Shahare/Event-Manager/main/demo/Videos/Admin.mov",
       "https://raw.githubusercontent.com/Kaushik-Shahare/Event-Manager/main/demo/Videos/Default.mov",
     ],
-    techStack: [
-      "Python",
-      "Flask",
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Jinja2",
-      "SQLite",
-    ],
-    libraries: ["zxcvbn", "bcrypt"],
+    techStack: ["Python", "Flask", "HTML", "CSS", "JavaScript", "SQLite"],
+    libraries: ["zxcvbn", "Jinja2", "bcrypt"],
     additionalInfo:
       "This project was developed to streamline event management for large organizations.",
   },
@@ -106,10 +98,11 @@ const projects = [
     link: "https://example.com/project-five",
     gitHub: "https://github.com/Kaushik-Shahare/PianoPlayer",
     photos: [
-      "https://example.com/virtual-piano1.jpg",
-      "https://example.com/virtual-piano2.jpg",
+      "https://github.com/Kaushik-Shahare/PianoPlayer/raw/main/demo/Images/keydetection.png",
     ],
-    video: ["https://example.com/virtual-piano.mp4"],
+    video: [
+      "https://github.com/Kaushik-Shahare/PianoPlayer/raw/main/demo/Videos/keydetection.mov",
+    ],
     techStack: ["Python", "OpenCV", "TensorFlow"],
     libraries: ["NumPy", "Scikit-learn"],
     additionalInfo:
