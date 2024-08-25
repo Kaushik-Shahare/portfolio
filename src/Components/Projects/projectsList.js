@@ -23,8 +23,16 @@ const projects = [
       "https://raw.githubusercontent.com/Kaushik-Shahare/Event-Manager/main/demo/Videos/Admin.mov",
       "https://raw.githubusercontent.com/Kaushik-Shahare/Event-Manager/main/demo/Videos/Default.mov",
     ],
-    techStack: ["React", "Node.js", "Express", "MongoDB"],
-    libraries: ["Socket.io", "Mongoose", "Redux"],
+    techStack: [
+      "Python",
+      "Flask",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Jinja2",
+      "SQLite",
+    ],
+    libraries: ["zxcvbn", "bcrypt"],
     additionalInfo:
       "This project was developed to streamline event management for large organizations.",
   },
@@ -47,7 +55,7 @@ const projects = [
       "https://raw.githubusercontent.com/Kaushik-Shahare/ChatApp/main/demo/Videos/LiveChat.mov",
     ],
     techStack: ["React", "Socket.io", "Node.js"],
-    libraries: ["Emoji-Mart", "Axios"],
+    libraries: ["Emoji-Mart", "Axios", "jsonwebtoken", "bcrypt"],
     additionalInfo:
       "This chat app allows real-time communication with a rich user interface.",
   },
@@ -62,7 +70,7 @@ const projects = [
     gitHub: "https://github.com/Kaushik-Shahare/portfolio",
     photos: ["https://raw.githubusercontent.com/Kaushik-Shahare/ChatApp/"],
     video: ["https://example.com/portfolio.mp4"],
-    techStack: ["React", "Next.js", "Tailwind CSS"],
+    techStack: ["React", "Tailwind CSS"],
     libraries: ["Framer Motion", "React Router"],
     additionalInfo:
       "A personal website to showcase my skills, projects, and experience. It includes a resume and contact form.",
@@ -76,12 +84,15 @@ const projects = [
       "The News Summary project is a powerful tool for extracting and summarizing news articles. Users can either capture a photo of a news article or paste the URL of an article to receive a summary that includes the title, date, author, and main content. The project leverages Python, Django, and web scraping techniques to provide users with concise and relevant information from various news sources.",
     link: "https://example.com/project-four",
     gitHub: "https://github.com/Kaushik-Shahare/News-Summarization-WebSite",
-    photos: ["https://example.com/news-summary1.jpg"],
+    photos: [
+      "https://raw.githubusercontent.com/Kaushik-Shahare/News-Summarization-WebSite/main/demo/Images/home.png",
+      "https://raw.githubusercontent.com/Kaushik-Shahare/News-Summarization-WebSite/main/demo/Images/Summary.png",
+    ],
     video: [
       "https://raw.githubusercontent.com/Kaushik-Shahare/News_Summarizar/master/demo_video/imageToSummary.mp4",
     ],
-    techStack: ["Python", "Django", "BeautifulSoup"],
-    libraries: ["Newspaper3k", "Requests"],
+    techStack: ["Python", "Flask", "Computer Vision", "Machine Learning"],
+    libraries: ["CV2", "Pytesseract", "nltk", "facebook-bart-large-cnn"],
     additionalInfo:
       "This project extracts and summarizes news articles from various sources, providing users with concise information.",
   },
