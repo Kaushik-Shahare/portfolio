@@ -12,3 +12,9 @@ input,
 textarea {
   color: #00ff00;
 }
+
+.glow-text {
+  color: #00ff00; /* Green color for the glow */
+  text-shadow: 0 0 2px #00ff00, 0 0 2px #00ff00, 0 0 3px #00ff00;
+  /* 0 0 4px #00ff00; */
+}

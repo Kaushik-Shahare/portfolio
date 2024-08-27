@@ -19,15 +19,23 @@ const ContactMe = () => {
     >
       <div className="relative z-10 bg-gray-900 p-6 sm:p-8 rounded-lg shadow-lg border border-green-500 w-full max-w-lg sm:max-w-xl md:max-w-3xl lg:max-w-4xl flex flex-col md:flex-row">
         {/* Contact Info Section */}
-        <div className="md:w-1/2 md:pr-6 text-green-400 glitch-text text-left mb-6 md:mb-0">
-          <h2 className="text-2xl font-bold mb-6 text-center md:text-left">
+        <div className="md:w-1/2 md:pr-6 text-green-400 text-left mb-6 md:mb-0">
+          <h2 className="text-2xl font-bold mb-6 text-center md:text-left glitch-text">
             Contact Information
           </h2>
           <div>
-            <p className="mb-4">Name: Kaushik Shahare</p>
-            <p className="mb-4">Email: kaushikshahare4@gmail.com</p>
-            <p className="mb-4">Phone: +91 935-913-9756</p>
-            <p className="mb-4">Location: Thane, India</p>
+            <p className="mb-4">
+              <a className="glow-text">Name:</a> Kaushik Shahare
+            </p>
+            <p className="mb-4">
+              <a className="glow-text">Email:</a> kaushikshahare4@gmail.com
+            </p>
+            <p className="mb-4">
+              <a className="glow-text">Phone:</a> +91 935-913-9756
+            </p>
+            <p className="mb-4">
+              <a className="glow-text">Location:</a> Thane, India
+            </p>
           </div>
         </div>
 
@@ -41,7 +49,7 @@ const ContactMe = () => {
           </h2>
           <div className="mb-4">
             <label
-              className="block text-green-400 glitch-text mb-2"
+              className="block text-green-400 text-left mb-2"
               htmlFor="name"
             >
               Name
@@ -58,7 +66,7 @@ const ContactMe = () => {
           </div>
           <div className="mb-4">
             <label
-              className="block text-green-400 glitch-text mb-2"
+              className="block text-green-400 text-left mb-2"
               htmlFor="email"
             >
               Email
@@ -75,7 +83,7 @@ const ContactMe = () => {
           </div>
           <div className="mb-6">
             <label
-              className="block text-green-400 glitch-text mb-2"
+              className="block text-green-400 text-left mb-2"
               htmlFor="message"
             >
               Message
