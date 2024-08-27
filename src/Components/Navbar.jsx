@@ -21,6 +21,7 @@ const Navbar = () => {
         }
       }, 100); // Adjust the delay as needed
     }
+    setIsOpen(false);
   };
 
   return (
@@ -90,6 +91,15 @@ const Navbar = () => {
             className="text-green-400 text-xl no-underline hover:text-green-300 relative group cursor-pointer"
           >
             Projects
+            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-green-300 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+          </div>
+        </li>
+        <li>
+          <div
+            onClick={() => scrollToSection("contactMe")}
+            className="text-green-400 text-xl no-underline hover:text-green-300 relative group cursor-pointer"
+          >
+            Contact Me
             <span className="absolute left-0 bottom-0 w-full h-0.5 bg-green-300 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
           </div>
         </li>
