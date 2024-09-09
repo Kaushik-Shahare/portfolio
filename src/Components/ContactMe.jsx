@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
 import "./ContactMe.css";
 
 const ContactMe = () => {
@@ -8,8 +9,30 @@ const ContactMe = () => {
     message: "",
   });
 
+  const [isSent, setIsSent] = useState(false);
+  const [error, setError] = useState(null);
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const serviceID = process.env.REACT_APP_SERVICE_ID;
+    const templateID = process.env.REACT_APP_TEMPLATE_ID;
+    const userID = process.env.REACT_APP_USER_ID;
+
+    emailjs.send(serviceID, templateID, formData, userID).then(
+      (response) => {
+        console.log("SUCCESS!", response.status, response.text);
+        setIsSent(true);
+      },
+      (err) => {
+        console.error("FAILED...", err);
+        setError("Failed to send message. Please try again.");
+      }
+    );
   };
 
   return (
@@ -41,12 +64,16 @@ const ContactMe = () => {
 
         {/* Contact Form Section */}
         <form
-          // onSubmit={handleSubmit}
+          onSubmit={handleSubmit}
           className="md:w-1/2 bg-gray-900 p-6 sm:p-8 rounded-lg border border-green-500"
         >
           <h2 className="text-2xl font-bold text-green-400 glitch-text mb-6 text-center md:text-left">
             Contact Me
           </h2>
+          {isSent && (
+            <p className="text-green-500 mb-4">Message sent successfully!</p>
+          )}
+          {error && <p className="text-red-500 mb-4">{error}</p>}
           <div className="mb-4">
             <label
               className="block text-green-400 text-left mb-2"
