@@ -23,7 +23,14 @@ const ContactMe = () => {
     const templateID = process.env.REACT_APP_TEMPLATE_ID;
     const userID = process.env.REACT_APP_USER_ID;
 
-    emailjs.send(serviceID, templateID, formData, userID).then(
+    const templateParams = {
+      from_name: formData.name,
+      to_name: "Kaushik Shahare",
+      message: formData.message,
+      from_email: formData.email,
+    };
+
+    emailjs.send(serviceID, templateID, templateParams, userID).then(
       (response) => {
         console.log("SUCCESS!", response.status, response.text);
         setIsSent(true);

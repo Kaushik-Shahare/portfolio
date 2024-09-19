@@ -110,7 +110,7 @@ const Profile = () => {
           <img
             src="/Profile1.png"
             alt="Profile"
-            className="object-cover w-40 h-40 sm:w-80 sm:h-80 z-10"
+            className="object-cover rounded w-40 h-40 sm:w-80 sm:h-80 z-10"
             style={{ filter: "drop-shadow(0 0 10px #00ff00)" }}
           />
 
