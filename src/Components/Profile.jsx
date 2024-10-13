@@ -108,11 +108,13 @@ const Profile = () => {
         >
           {/* Profile Picture */}
           <img
-            src="/Profile1.png"
+            src="/Profile2.jpeg"
             alt="Profile"
             className="object-cover w-40 h-40 sm:w-80 sm:h-80 z-10 rounded-full"
             style={{ filter: "drop-shadow(0 0 10px #00ff00)" }}
           />
+          {/* Black Overlay */}
+          <div className="absolute inset-0 bg-black bg-opacity-30 rounded-full z-20"></div>
 
           {/* Animated Border */}
           <div className="absolute inset-0 rounded-full border-4 border-green-500 animate-matrix-border"></div>

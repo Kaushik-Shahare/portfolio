@@ -11,6 +11,7 @@ const ContactMe = () => {
 
   const [isSent, setIsSent] = useState(false);
   const [error, setError] = useState(null);
+  const [submissionCount, setSubmissionCount] = useState(0); // Track submissions
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,6 +19,14 @@ const ContactMe = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Check if submission limit is reached
+    if (submissionCount >= 5) {
+      setError(
+        "You have reached the submission limit. Please try again later."
+      );
+      return;
+    }
 
     const serviceID = process.env.REACT_APP_SERVICE_ID;
     const templateID = process.env.REACT_APP_TEMPLATE_ID;
@@ -34,6 +43,11 @@ const ContactMe = () => {
       (response) => {
         console.log("SUCCESS!", response.status, response.text);
         setIsSent(true);
+        setError(null); // Clear any previous errors
+
+        // Reset form data
+        setFormData({ name: "", email: "", message: "" });
+        setSubmissionCount((prevCount) => prevCount + 1); // Increment submission count
       },
       (err) => {
         console.error("FAILED...", err);
