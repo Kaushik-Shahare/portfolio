@@ -108,6 +108,106 @@ const projects = [
     additionalInfo:
       "This project aims to create an innovative piano learning tool using computer vision to detect keys and play sounds.",
   },
+  {
+    id: 6,
+    title: "AgriConnect",
+    shortDescription:
+      "A marketplace to sell their products directly to consumers.",
+    detailedDescription:
+      "AgriConnect is an innovative platform designed to revolutionize the agricultural ecosystem by leveraging technology to bridge gaps between farmers, agricultural experts, and consumers. The platform serves as a comprehensive solution for farmers to network, share knowledge, and access a marketplace to sell their products directly, ensuring better profitability and sustainable practices.",
+    link: "https://agriconnect.kaushikshahare.com",
+    gitHub: "https://github.com/Kaushik-Shahare/AgriConnect",
+    photos: [
+      "https://raw.githubusercontent.com/Kaushik-Shahare/AgriConnect/refs/heads/main/Images%26Videos/Landing.png",
+      "https://raw.githubusercontent.com/Kaushik-Shahare/AgriConnect/refs/heads/main/Images%26Videos/home.png",
+      "https://raw.githubusercontent.com/Kaushik-Shahare/AgriConnect/refs/heads/main/Images%26Videos/dashboard.png",
+      "https://raw.githubusercontent.com/Kaushik-Shahare/AgriConnect/refs/heads/main/Images%26Videos/searchResult.png",
+      "https://raw.githubusercontent.com/Kaushik-Shahare/AgriConnect/refs/heads/main/Images%26Videos/productPage.png",
+      "https://raw.githubusercontent.com/Kaushik-Shahare/AgriConnect/refs/heads/main/Images%26Videos/profile.png",
+      "https://raw.githubusercontent.com/Kaushik-Shahare/AgriConnect/refs/heads/main/Images%26Videos/cart.png",
+    ],
+    video: [],
+    techStack: ["Python", "Django", "TypeScript", "NextJS", "Tailwind CSS"],
+    libraries: ["cloudinary", "generativeAI", "chartJS", "MUI"],
+    additionalInfo:
+      "This project was developed to streamline selling crops directly from farmer.",
+  },
+  {
+    id: 7,
+    title: "MiniMilitia Web",
+    shortDescription: "A web based 2D Multiplayer Shooter Game.",
+    detailedDescription: `
+# 2D Multiplayer Shooter Game: MiniMilitia (Web Version)
+
+## Overview  
+MiniMilitia is a game that I cherished during my childhood, playing it with friends and creating unforgettable memories. As a developer, I wanted to recreate this beloved game on the web, making it accessible without the need for downloads. Originally a mobile game, my web version brings the same fun experience directly to your browser.
+
+To achieve this, I delved into the world of game development, reverse-engineering several 2D games to understand the mechanics and dynamics. This project not only allowed me to relive a part of my childhood but also gave me invaluable insights into game development and learn javascript in depth.
+
+---
+
+## Development Challenges and Solutions  
+
+### 1. Multiplayer Game Running Too Fast After Joining  
+- **Issue**: The game speed increased significantly when multiple players joined.  
+- **Solution**: Instead of re-rendering the entire page on every frame, I optimized it by updating only the player’s location. This drastically improved performance and resolved the issue.
+
+### 2. Dynamic Canvas Size Causing Location Discrepancies  
+- **Issue**: Players had different positions on the canvas due to varying screen resolutions.  
+- **Solution**: Standardized the canvas size to fixed dimensions, ensuring consistent gameplay across screens. Examples:  
+  - **16:9 Resolutions**:  
+    - 320x180  
+    - 640x360  
+    - 1280x720  
+
+### 3. Jetpack Spam Causing Errors  
+- **Issue**: Excessive use of the jetpack feature led to unexpected behavior.  
+- **Solution**: Implemented proper checks and limits to handle jetpack usage efficiently.
+
+### 4. Handling Health Bar Depletion  
+- **Issue**: Defining actions when a player’s health bar reaches zero.  
+- **Solution**: Designed and implemented logic to handle player respawn, game over, or spectator mode.
+
+### 5. Gun Aiming and Character Rotation  
+- **Issue**: Rotating the character and gun accurately when aiming left.  
+- **Solution**: Utilized the \`ctx.scale(x, y)\` method to mirror the character and gun seamlessly.
+
+### 6. Improved Aim Mechanics  
+- **Previous**: Aiming directly at the mouse pointer, which often caused misclicks or accidental actions.  
+- **Improved**: Restricted aiming to a specific radius around the character, detecting mouse movement within that radius. This enhancement provided a smoother aiming experience and avoided unwanted interactions outside the game canvas.
+
+### 7. Character Animation  
+- **Challenge**: Creating smooth animations for character movements and actions.  
+- **Solution**: After studying 2D games and their documentation, I adopted the use of sprites—a single file containing all character movement frames. This approach streamlined animation rendering and added life to the gameplay.
+
+---
+This project was not just about recreating a game but also about exploring the intricacies of game development. From solving technical challenges to enhancing player experience, MiniMilitia (Web Version) is a passion project that combines nostalgia with innovation.
+`,
+    link: "https://drive.google.com/drive/folders/1ertEtt2YlaRlPR4xJgCBqaMp_8a1S2Pg?usp=sharing",
+    gitHub: "https://github.com/Kaushik-Shahare/2dGame-MiniMilitiaWeb",
+    photos: [
+      "https://raw.githubusercontent.com/Kaushik-Shahare/2dGame-MiniMilitiaWeb/refs/heads/main/Images%26Videos/Initial.png",
+      "https://raw.githubusercontent.com/Kaushik-Shahare/2dGame-MiniMilitiaWeb/refs/heads/main/Images%26Videos/multiplayer.png",
+    ],
+    video: [],
+    techStack: [
+      "JavaScript",
+      "HTML5 Canvas (2D)",
+      "React",
+      "Node",
+      "WebSocket",
+    ],
+    libraries: ["Express.js", "Sprite-based animations"],
+    additionalInfo: `
+This project was developed to recreate the popular mobile game MiniMilitia on the web, offering a nostalgic gaming experience.
+
+## Future Enhancements
+- Implementing additional maps and game modes.
+- Enhancing character customization options.
+- Adding sound effects and background music.
+- Optimizing gameplay for mobile devices.
+`,
+  },
 ];
 
 export default projects;

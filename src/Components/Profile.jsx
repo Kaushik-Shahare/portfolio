@@ -6,7 +6,21 @@ const Profile = () => {
   const [currentSkillIndex, setCurrentSkillIndex] = useState(0);
   const [fade, setFade] = useState(true);
   const [tiltStyle, setTiltStyle] = useState({});
-  const skills = ["Full Stack Developer", "JavaScript", "React", "Node.js"];
+  const skills = [
+    "Full Stack Developer",
+    "JavaScript",
+    "React",
+    "Node.js",
+    "Express",
+    "Python",
+    "Django",
+    "MongoDB",
+    "PostgreSQL",
+    "REST API",
+    "Git",
+    "Docker",
+    "CI/CD",
+  ];
   const imgRef = useRef(null);
 
   useEffect(() => {
