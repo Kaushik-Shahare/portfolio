@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ExperienceDiv from "./ExperienceDiv";
 import Xarrow from "react-xarrows";
 
@@ -14,21 +14,21 @@ const experiences = [
   },
   {
     id: "experience-2",
-    title: "Technical Intern (Backend)",
+    title: "Backend Developer Intern (Django)",
     company: "Storyvord Ltd.",
     location: "London, UK (Remote)",
-    duration: "July 2024 - Present",
+    duration: "July 2024 - Jan 2025",
     description:
       "Engaged in backend development with a focus on server-side code, API development, and system integration.",
   },
-  //   {
-  //     id: "experience-3",
-  //     title: "Technical Intern (Backend)",
-  //     company: "Storyvord Ltd.",
-  //     duration: "July 2024 - Present",
-  //     description:
-  //       "Engaged in backend development with a focus on server-side code, API development, and system integration.",
-  //   },
+    {
+      id: "experience-3",
+      title: "Software Engineer Intern",
+      company: "Storyvord Ltd.",
+      duration: "Jan 2025 - Present",
+      description:
+        "I manage server side code, Azure deployment, and cloud monitoring using Grafana, Prometheus, Promtail, and Grafana Loki",
+    },
   //   {
   //     id: "experience-4",
   //     title: "Technical Intern (Backend)",
@@ -49,8 +49,21 @@ const experiences = [
 ];
 
 const Experience = () => {
+  useEffect(() => {
+    const onScroll = () => {
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+        const nextSection = document.getElementById("next-section");
+        if (nextSection) {
+          nextSection.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-6">
+    <div className="flex flex-col items-center justify-center min-h-screen p-20">
       <h1 className="text-5xl font-bold mb-6 text-green-400 pt-20">
         Experience
       </h1>

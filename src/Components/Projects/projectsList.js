@@ -183,13 +183,15 @@ To achieve this, I delved into the world of game development, reverse-engineerin
 ---
 This project was not just about recreating a game but also about exploring the intricacies of game development. From solving technical challenges to enhancing player experience, MiniMilitia (Web Version) is a passion project that combines nostalgia with innovation.
 `,
-    link: "https://drive.google.com/drive/folders/1ertEtt2YlaRlPR4xJgCBqaMp_8a1S2Pg?usp=sharing",
+    link: "https://mini-militia.kaushikshahare.com",
     gitHub: "https://github.com/Kaushik-Shahare/2dGame-MiniMilitiaWeb",
     photos: [
-      "https://raw.githubusercontent.com/Kaushik-Shahare/2dGame-MiniMilitiaWeb/refs/heads/main/Images%26Videos/Initial.png",
-      "https://raw.githubusercontent.com/Kaushik-Shahare/2dGame-MiniMilitiaWeb/refs/heads/main/Images%26Videos/multiplayer.png",
+      "https://raw.githubusercontent.com/Kaushik-Shahare/2dGame-MiniMilitiaWeb/refs/heads/main/Images%26Videos/Demo.png",
+      "https://raw.githubusercontent.com/Kaushik-Shahare/2dGame-MiniMilitiaWeb/refs/heads/main/Images%26Videos/DiedScreen.png",
     ],
-    video: [],
+    video: [
+      "https://raw.githubusercontent.com/Kaushik-Shahare/2dGame-MiniMilitiaWeb/refs/heads/main/Images%26Videos/Minimilitia-DocVid.mp4",
+    ],
     techStack: [
       "JavaScript",
       "HTML5 Canvas (2D)",

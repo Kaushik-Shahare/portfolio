@@ -7,19 +7,21 @@ const Profile = () => {
   const [fade, setFade] = useState(true);
   const [tiltStyle, setTiltStyle] = useState({});
   const skills = [
-    "Full Stack Developer",
-    "JavaScript",
-    "React",
-    "Node.js",
-    "Express",
-    "Python",
-    "Django",
-    "MongoDB",
-    "PostgreSQL",
-    "REST API",
-    "Git",
-    "Docker",
-    "CI/CD",
+    // "Full Stack Developer",
+    // "JavaScript",
+    // "React",
+    // "Node.js",
+    // "Express",
+    // "Python",
+    // "Django",
+    // "MongoDB",
+    // "PostgreSQL",
+    // "REST API",
+    // "Git",
+    // "Docker",
+    // "CI/CD",
+    "Software Engineer",
+    "Backend Developer",
   ];
   const imgRef = useRef(null);
 
