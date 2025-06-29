@@ -198,7 +198,7 @@ const Awards = () => {
         {/* Achievement Stats */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           <div className="bg-black bg-opacity-60 border border-green-400 rounded-lg p-4">
-            <h4 className="text-2xl font-bold text-green-400">8+</h4>
+            <h4 className="text-2xl font-bold text-green-400">2</h4>
             <p className="text-green-300 text-sm">Total Awards</p>
           </div>
           <div className="bg-black bg-opacity-60 border border-green-400 rounded-lg p-4">
@@ -206,7 +206,7 @@ const Awards = () => {
             <p className="text-green-300 text-sm">Competitors Beat</p>
           </div>
           <div className="bg-black bg-opacity-60 border border-green-400 rounded-lg p-4">
-            <h4 className="text-2xl font-bold text-green-400">20+</h4>
+            <h4 className="text-2xl font-bold text-green-400">15</h4>
             <p className="text-green-300 text-sm">Skills Certified</p>
           </div>
           <div className="bg-black bg-opacity-60 border border-green-400 rounded-lg p-4">
