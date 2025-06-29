@@ -210,6 +210,23 @@ This project was developed to recreate the popular mobile game MiniMilitia on th
 - Optimizing gameplay for mobile devices.
 `,
   },
+  {
+  id: 8,
+  title: "MedAudit",
+  shortDescription:
+    "AI-powered multi-agent system for smart hospital operations and insurance claim optimization.",
+  detailedDescription:
+    "Developed during a 36-hour hackathon organized by OnMySite HealthCare at Parul University, CodeBlue – MedAudit is an AI-driven system designed to optimize hospital workflows and minimize insurance claim rejections. Built by Team CodeBlue, the platform uses NFC for secure patient identification and a LangGraph-based multi-agent architecture to parse, validate, and auto-correct insurance documents using Electronic Health Records (EHR). It significantly reduces manual workload, accelerates OPD processes, and improves patient satisfaction by enabling faster and more accurate claim submissions.",
+  link: "https://github.com/Kaushik-Shahare/MedAudit",
+  gitHub: "https://github.com/Kaushik-Shahare/MedAudit",
+  photos: [
+    "https://raw.githubusercontent.com/Kaushik-Shahare/MedAudit/refs/heads/main/ImagesAndVideos/Multi-AgentFlow.jpeg"
+  ],
+  techStack: ["Python", "Django", "LangGraph", "PostgreSQL", "NFC"],
+  libraries: ["LangGraph", "OpenAI", "Pandas", "NumPy", "Django REST Framework", "pdfplumber"],
+  additionalInfo:
+    "Won 2nd Runner-Up (3rd place) among teams from various colleges across India. The system automates EHR validation, reduces denial risks, and saves hospitals over 1,900 hours per month by streamlining insurance processing and OPD check-ins."
+}
 ];
 
 export default projects;
