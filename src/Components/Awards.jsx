@@ -99,7 +99,7 @@ const Awards = () => {
                   
                   {/* Overlay with certificate indicator */}
                   <div className="absolute top-2 right-2 bg-green-400 bg-opacity-80 text-black text-xs px-2 py-1 rounded">
-                    🏆
+                    Award
                   </div>
                 </div>
               </div>

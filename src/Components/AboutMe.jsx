@@ -10,7 +10,7 @@ const AboutMe = () => {
         {/* Profile Image */}
         <div className="w-48 h-48 sm:w-60 sm:h-60 md:w-80 md:h-80 lg:w-[60vh] lg:h-[60vh] overflow-hidden border-4 border-green-400 shadow-lg flex-shrink-0">
           <img
-            src="/Profile.jpeg"
+            src="/Profile.JPG"
             alt="Profile"
             className="object-cover w-full h-full"
           />
@@ -19,19 +19,16 @@ const AboutMe = () => {
         {/* Text Content */}
         <div className="text-base sm:text-lg md:text-xl text-center lg:text-left max-w-lg text-gray-300 mt-6 lg:mt-0">
           <p className="mb-8">
-            Hello! I'm Kaushik Shahare, a passionate Full Stack Developer
-            primarily focused on Backend Development. Currently, I’m pursuing a
-            B.Tech in Computer Science and Engineering (3rd year). I enjoy
-            exploring new technologies and working on diverse projects.
+            Hello! I'm <strong>Kaushik Shahare</strong>, a dedicated Software Engineer 
+            with a strong focus on <strong>Backend Development</strong>. 
+            I'm currently in my 4rd year of pursuing a <strong>B.Tech in Computer Science and 
+            Engineering</strong>. I love building meaningful tech solutions and constantly 
+            strive to enhance my skills through hands-on projects and experimentation.
           </p>
           <p className="mb-8">
-            I am deeply interested in exploring cutting-edge technologies and
-            applying my skills to solve real-world problems. My expertise spans
-            various programming languages and frameworks, including JavaScript,
-            React, Node, Python, Django, Flask, and ML. I’m passionate about
-            continuous learning and actively contribute to open-source projects
-            to stay at the forefront of industry trends.
-          </p>
+            I'm passionate about leveraging cutting-edge technologies to solve real-world problems. 
+            My technical toolkit includes <strong>Python</strong>, <strong>Django</strong>, <strong>Flask</strong>, and <strong>Artificial Intelligence and Machine Learning</strong>. I'm a lifelong learner who enjoys diving into new frameworks, participating in hackathons, and contributing to <strong>open-source projects</strong> to stay aligned with industry trends and innovations.
+          </p> 
 
           <div className="mt-6 flex flex-col lg:flex-row lg:justify-start space-y-4 lg:space-y-0 lg:space-x-4">
             <a
