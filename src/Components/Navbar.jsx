@@ -96,6 +96,15 @@ const Navbar = () => {
         </li>
         <li>
           <div
+            onClick={() => scrollToSection("awards")}
+            className="text-green-400 text-xl no-underline hover:text-green-300 relative group cursor-pointer"
+          >
+            Awards
+            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-green-300 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+          </div>
+        </li>
+        <li>
+          <div
             onClick={() => scrollToSection("contactMe")}
             className="text-green-400 text-xl no-underline hover:text-green-300 relative group cursor-pointer"
           >

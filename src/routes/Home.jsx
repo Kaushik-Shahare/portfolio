@@ -4,6 +4,7 @@ import Profile from "../Components/Profile";
 import AboutMe from "../Components/AboutMe";
 import Projects from "../Components/Projects/Projects";
 import Experience from "../Components/Experience";
+import Awards from "../Components/Awards";
 import ContactMe from "../Components/ContactMe";
 
 const Home = () => {
@@ -22,12 +23,13 @@ const Home = () => {
       { threshold: 0.5 }
     );
 
-    sectionRefs.current.forEach((section) => {
+    const currentSections = sectionRefs.current;
+    currentSections.forEach((section) => {
       if (section) observer.observe(section);
     });
 
     return () => {
-      sectionRefs.current.forEach((section) => {
+      currentSections.forEach((section) => {
         if (section) observer.unobserve(section);
       });
     };
@@ -99,10 +101,20 @@ const Home = () => {
         </div>
         <div
           className={`section transition-opacity duration-1000 ease-in-out ${
+            activeSection === "awards" ? "opacity-100" : "opacity-0"
+          }`}
+          data-section="awards"
+          ref={(el) => (sectionRefs.current[4] = el)}
+          id="awards"
+        >
+          <Awards />
+        </div>
+        <div
+          className={`section transition-opacity duration-1000 ease-in-out ${
             activeSection === "contactMe" ? "opacity-100" : "opacity-0"
           }`}
           data-section="contactMe"
-          ref={(el) => (sectionRefs.current[4] = el)}
+          ref={(el) => (sectionRefs.current[5] = el)}
           id="contactMe"
         >
           <ContactMe />
