@@ -3,7 +3,7 @@ import React from "react";
 const ExperienceDiv = ({ exp, index, onViewDetails, alignment }) => {
   return (
     <div
-      className={`group relative bg-gradient-to-br from-gray-900 via-gray-800 to-black border-2 border-green-400 rounded-lg p-6 shadow-2xl hover:shadow-green-500/20 transition-all duration-300 transform hover:scale-105 cursor-pointer max-w-md ${
+      className={`group relative glass-card border-2 border-green-400 rounded-lg p-6 shadow-2xl hover:shadow-green-500/20 transition-all duration-300 transform hover:scale-105 cursor-pointer max-w-md ${
         alignment === "right" ? "text-right ml-auto" : "text-left mr-auto"
       }`}
       onClick={onViewDetails}
@@ -56,7 +56,7 @@ const ExperienceDiv = ({ exp, index, onViewDetails, alignment }) => {
 
         {/* View Details Button */}
         <button
-          className={`inline-block bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white font-semibold py-2 px-4 rounded transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-green-500/25 text-sm ${
+          className={`inline-block bg-green-700/80 hover:bg-green-600/90 text-white font-semibold py-2 px-4 rounded transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-green-500/25 text-sm ${
             alignment === "right" ? "mr-auto" : "ml-auto"
           }`}
         >

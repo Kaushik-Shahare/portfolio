@@ -291,7 +291,7 @@ const Experience = () => {
       {/* Experience Details Modal */}
       {selectedExperience && (
         <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
-          <div className="bg-gray-900 border-2 border-green-400 rounded-lg w-full max-w-4xl max-h-[90vh] flex flex-col">
+          <div className="glass-card border-2 border-green-400 rounded-lg w-full max-w-4xl max-h-[90vh] flex flex-col">
             {/* Modal Header */}
             <div className="flex justify-between items-start p-6 border-b border-green-400/30">
               <div className="flex-1 pr-4">
@@ -438,7 +438,7 @@ const Experience = () => {
             </div>
 
             {/* Modal Footer */}
-            <div className="flex justify-end p-6 border-t border-green-400/30 bg-gray-900">
+            <div className="flex justify-end p-6 border-t border-green-400/30">
               <div className="flex gap-3">
                 {selectedExperience.certificate && (
                   <button

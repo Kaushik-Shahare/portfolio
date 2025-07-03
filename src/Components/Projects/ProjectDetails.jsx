@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import projects from "./projectsList";
 import ReactMarkdown from "react-markdown";
+import MatrixRain from "../../routes/MatrixRain";
 
 const ProjectDetails = () => {
   const { projectId } = useParams();
@@ -52,16 +53,13 @@ const ProjectDetails = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-left relative" style={{ 
-      backgroundColor: '#000000', 
-      zIndex: 100,
-      position: 'relative'
-    }}>
-      {/* Full page overlay to block matrix rain */}
-      <div className="fixed inset-0 bg-black z-50" style={{ backgroundColor: '#000000' }}></div>
-      
+    <div className="min-h-screen bg-black text-left relative overflow-hidden">
+      {/* Matrix Rain Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <MatrixRain />
+      </div>
       {/* Main content container */}
-      <div className="relative z-50">
+      <div className="relative z-10">
         <Navbar />
         <div className="container mx-auto px-4 py-20 max-w-6xl">
           {/* Back Button */}
@@ -112,7 +110,7 @@ const ProjectDetails = () => {
           {(project.photos?.length > 0 || project.video?.length > 0) && (
             <div className="mb-16">
               <h2 className="text-2xl font-bold text-green-400 mb-6 text-center">Project Gallery</h2>
-              <div className="bg-gray-900 border border-green-400/30 rounded-lg p-4">
+              <div className="glass-card border border-green-400/30 rounded-lg p-4">
                 <Slider {...settings}>
                   {project.video?.map((video, index) => (
                     <div key={`video-${index}`} className="px-2">
@@ -147,7 +145,7 @@ const ProjectDetails = () => {
           {/* Tech Stack and Libraries Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {/* Tech Stack Section */}
-            <div className="bg-gray-900/60 border border-green-400/30 rounded-lg p-6">
+            <div className="glass-card border border-green-400/30 rounded-lg p-6">
               <h2 className="text-2xl font-bold text-green-400 mb-4 flex items-center">
                 Tech Stack
               </h2>
@@ -164,7 +162,7 @@ const ProjectDetails = () => {
             </div>
 
             {/* Libraries Section */}
-            <div className="bg-gray-900/60 border border-green-400/30 rounded-lg p-6">
+            <div className="glass-card border border-green-400/30 rounded-lg p-6">
               <h2 className="text-2xl font-bold text-green-400 mb-4 flex items-center">
                 Libraries & Tools
               </h2>
@@ -182,7 +180,7 @@ const ProjectDetails = () => {
           </div>
 
           {/* Detailed Description Section */}
-          <div className="bg-gray-900/40 border border-green-400/30 rounded-lg p-8 mb-12">
+          <div className="glass-card border border-green-400/30 rounded-lg p-8 mb-12">
             <h2 className="text-3xl font-bold text-green-400 mb-6">Project Overview</h2>
             <div className="prose prose-invert prose-green max-w-none text-left">
               <ReactMarkdown
@@ -241,7 +239,7 @@ const ProjectDetails = () => {
 
           {/* Additional Information Section */}
           {project.additionalInfo && (
-            <div className="bg-gray-900/40 border border-green-400/30 rounded-lg p-8 mb-12">
+            <div className="glass-card border border-green-400/30 rounded-lg p-8 mb-12">
               <h2 className="text-3xl font-bold text-green-400 mb-6">Additional Information</h2>
               <div className="prose prose-invert prose-green max-w-none text-left">
                 <ReactMarkdown

@@ -13,7 +13,7 @@ const Projects = () => {
         {projects.slice().reverse().map((project) => (
           <div
             key={project.id}
-            className="group relative bg-gradient-to-br from-gray-900 via-gray-800 to-black p-6 rounded-lg shadow-2xl border border-green-500 glitch-box flex flex-col justify-between z-20 hover:border-green-400 hover:shadow-green-500/20 transition-all duration-300 transform hover:scale-105"
+            className="group relative p-6 rounded-lg shadow-2xl glass-card glitch-box flex flex-col justify-between z-20 hover:border-green-400 hover:shadow-green-500/20 transition-all duration-300 transform hover:scale-105"
           >
             {/* Project Image/Preview */}
             <div className="relative overflow-hidden rounded-lg mb-4 h-48">
@@ -29,7 +29,7 @@ const Projects = () => {
                 />
               ) : null}
               <div 
-                className="w-full h-full bg-gradient-to-br from-green-500/20 to-green-700/20 flex items-center justify-center"
+                className="w-full h-full bg-black/30 flex items-center justify-center"
                 style={{ display: project.photos && project.photos.length > 0 ? 'none' : 'flex' }}
               >
                 <div className="text-6xl text-green-400/50">
@@ -94,7 +94,7 @@ const Projects = () => {
             
             <Link
               to={`/projects/${project.id}`}
-              className="inline-block text-center bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white font-semibold py-2 px-4 rounded transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-green-500/25"
+              className="inline-block text-center bg-green-700/80 hover:bg-green-600/90 text-white font-semibold py-2 px-4 rounded transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-green-500/25"
             >
               View Details →
             </Link>
