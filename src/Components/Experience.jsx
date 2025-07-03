@@ -4,14 +4,15 @@ import ExperienceDiv from "./ExperienceDiv";
 const experiences = [
   {
     id: "experience-1",
-    title: "Backend Developer Intern (Express)",
+    title: "Backend Developer Intern",
     company: "Mr. Loggage",
     location: "Gujrat, India",
     duration: "June 2024 - December 2024",
-    shortDescription: "Completed backend services development using Express with API development and database management.",
+    shortDescription:
+      "Completed backend services development using Express with API development and database management.",
     certificate: "/certificates/Experience/MrLoggageCertificate.pdf",
     detailedDescription: `
-# Backend Developer Intern (Express) - Mr. Loggage
+# Backend Developer Intern - Mr. Loggage
 
 ## Role Overview
 As a Backend Developer Intern at Mr. Loggage, I've been instrumental in developing robust backend services using Express.js. This role has provided me with extensive hands-on experience in server-side development and API architecture.
@@ -36,20 +37,29 @@ As a Backend Developer Intern at Mr. Loggage, I've been instrumental in developi
 - Version control with Git and collaborative development
 - Testing frameworks (Jest, Mocha)
     `,
-    skills: ["Express.js", "Node.js", "MongoDB", "PostgreSQL", "JWT", "REST APIs", "Git"],
+    skills: [
+      "Express.js",
+      "Node.js",
+      "MongoDB",
+      "PostgreSQL",
+      "JWT",
+      "REST APIs",
+      "Git",
+    ],
     type: "Backend Development",
-    status: "Completed"
+    status: "Completed",
   },
   {
     id: "experience-2",
-    title: "Backend Developer Intern (Django)",
+    title: "Backend Developer Intern",
     company: "Storyvord Ltd.",
     location: "London, UK (Remote)",
     duration: "July 2024 - Jan 2025",
-    shortDescription: "Focused on Django backend development with server-side code and system integration.",
+    shortDescription:
+      "Focused on Django backend development with server-side code and system integration.",
     certificate: "/certificates/Experience/StoryvordCertificate.pdf",
     detailedDescription: `
-# Backend Developer Intern (Django) - Storyvord Ltd.
+# Backend Developer Intern - Storyvord Ltd.
 
 ## Company Overview
 Storyvord Ltd. is a London-based technology company specializing in digital storytelling platforms and content management solutions.
@@ -82,9 +92,17 @@ During my tenure as a Backend Developer Intern, I worked extensively with Django
 - Cloud deployment and DevOps practices
 - Agile development methodologies
     `,
-    skills: ["Django", "Python", "Django REST Framework", "PostgreSQL", "Redis", "Celery", "Docker"],
+    skills: [
+      "Django",
+      "Python",
+      "Django REST Framework",
+      "PostgreSQL",
+      "Redis",
+      "Celery",
+      "Docker",
+    ],
     type: "Backend Development",
-    status: "Completed"
+    status: "Completed",
   },
   {
     id: "experience-3",
@@ -92,7 +110,8 @@ During my tenure as a Backend Developer Intern, I worked extensively with Django
     company: "Storyvord Ltd.",
     location: "London, UK (Remote)",
     duration: "Jan 2025 - Present",
-    shortDescription: "Managing server-side code, Azure deployment, cloud monitoring infrastructure, and developing AI agents using LangGraph.",
+    shortDescription:
+      "Managing server-side code, Azure deployment, cloud monitoring infrastructure, and developing AI agents using LangGraph.",
     detailedDescription: `
 # Software Engineer Intern - Storyvord Ltd.
 
@@ -155,10 +174,20 @@ Following my successful completion as a Backend Developer Intern, I was promoted
 - Learning Infrastructure as Code (IaC) with Terraform
 - Exploring microservices architecture patterns
     `,
-    skills: ["Azure", "LangChain/LangGraph", "Grafana", "Prometheus", "Promtail", "Grafana Loki", "Docker", "DevOps", "CI/CD"],
+    skills: [
+      "Azure",
+      "LangChain/LangGraph",
+      "Grafana",
+      "Prometheus",
+      "Promtail",
+      "Grafana Loki",
+      "Docker",
+      "DevOps",
+      "CI/CD",
+    ],
     type: "Cloud & DevOps",
-    status: "Current"
-  }
+    status: "Current",
+  },
 ];
 
 const Experience = () => {
@@ -166,7 +195,10 @@ const Experience = () => {
 
   useEffect(() => {
     const onScroll = () => {
-      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+      if (
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 50
+      ) {
         const nextSection = document.getElementById("next-section");
         if (nextSection) {
           nextSection.scrollIntoView({ behavior: "smooth" });
@@ -187,7 +219,7 @@ const Experience = () => {
 
   const openCertificate = (certificate) => {
     if (certificate) {
-      window.open(certificate, '_blank');
+      window.open(certificate, "_blank");
     }
   };
 
@@ -199,56 +231,60 @@ const Experience = () => {
       <div className="relative w-full max-w-6xl">
         {/* Central Timeline Line */}
         <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-green-400 via-green-500 to-green-600"></div>
-        
+
         <div className="relative space-y-16">
-          {experiences.slice().reverse().map((exp, index) => (
-            <div
-              key={exp.id}
-              className={`flex items-center w-full ${
-                index % 2 === 0 ? "justify-start pr-1/2" : "justify-end pl-1/2"
-              }`}
-            >
-              {index % 2 === 0 ? (
-                <div className="flex items-center w-full">
-                  <div className="w-1/2 pr-8">
-                    <ExperienceDiv 
-                      exp={exp} 
-                      index={index} 
-                      onViewDetails={() => openModal(exp)}
-                      alignment="right"
-                    />
+          {experiences
+            .slice()
+            .reverse()
+            .map((exp, index) => (
+              <div
+                key={exp.id}
+                className={`flex items-center w-full ${index % 2 === 0
+                    ? "justify-start pr-1/2"
+                    : "justify-end pl-1/2"
+                  }`}
+              >
+                {index % 2 === 0 ? (
+                  <div className="flex items-center w-full">
+                    <div className="w-1/2 pr-8">
+                      <ExperienceDiv
+                        exp={exp}
+                        index={index}
+                        onViewDetails={() => openModal(exp)}
+                        alignment="right"
+                      />
+                    </div>
+                    {/* Timeline dot */}
+                    <div className="relative flex-shrink-0">
+                      <div className="w-6 h-6 bg-green-400 rounded-full border-4 border-gray-900 z-10 relative"></div>
+                      {/* Arrow pointing from timeline to card */}
+                      <div className="absolute top-1/2 right-6 transform -translate-y-1/2 w-8 h-0.5 bg-green-400"></div>
+                      <div className="absolute top-1/2 right-6 transform -translate-y-1/2 translate-x-8 w-0 h-0 border-l-4 border-l-green-400 border-t-2 border-t-transparent border-b-2 border-b-transparent"></div>
+                    </div>
+                    <div className="w-1/2"></div>
                   </div>
-                  {/* Timeline dot */}
-                  <div className="relative flex-shrink-0">
-                    <div className="w-6 h-6 bg-green-400 rounded-full border-4 border-gray-900 z-10 relative"></div>
-                    {/* Arrow pointing from timeline to card */}
-                    <div className="absolute top-1/2 right-6 transform -translate-y-1/2 w-8 h-0.5 bg-green-400"></div>
-                    <div className="absolute top-1/2 right-6 transform -translate-y-1/2 translate-x-8 w-0 h-0 border-l-4 border-l-green-400 border-t-2 border-t-transparent border-b-2 border-b-transparent"></div>
+                ) : (
+                  <div className="flex items-center w-full">
+                    <div className="w-1/2"></div>
+                    {/* Timeline dot */}
+                    <div className="relative flex-shrink-0">
+                      <div className="w-6 h-6 bg-green-400 rounded-full border-4 border-gray-900 z-10 relative"></div>
+                      {/* Arrow pointing from timeline to card */}
+                      <div className="absolute top-1/2 left-6 transform -translate-y-1/2 w-8 h-0.5 bg-green-400"></div>
+                      <div className="absolute top-1/2 left-6 transform -translate-y-1/2 -translate-x-8 w-0 h-0 border-r-4 border-r-green-400 border-t-2 border-t-transparent border-b-2 border-b-transparent"></div>
+                    </div>
+                    <div className="w-1/2 pl-8">
+                      <ExperienceDiv
+                        exp={exp}
+                        index={index}
+                        onViewDetails={() => openModal(exp)}
+                        alignment="left"
+                      />
+                    </div>
                   </div>
-                  <div className="w-1/2"></div>
-                </div>
-              ) : (
-                <div className="flex items-center w-full">
-                  <div className="w-1/2"></div>
-                  {/* Timeline dot */}
-                  <div className="relative flex-shrink-0">
-                    <div className="w-6 h-6 bg-green-400 rounded-full border-4 border-gray-900 z-10 relative"></div>
-                    {/* Arrow pointing from timeline to card */}
-                    <div className="absolute top-1/2 left-6 transform -translate-y-1/2 w-8 h-0.5 bg-green-400"></div>
-                    <div className="absolute top-1/2 left-6 transform -translate-y-1/2 -translate-x-8 w-0 h-0 border-r-4 border-r-green-400 border-t-2 border-t-transparent border-b-2 border-b-transparent"></div>
-                  </div>
-                  <div className="w-1/2 pl-8">
-                    <ExperienceDiv 
-                      exp={exp} 
-                      index={index} 
-                      onViewDetails={() => openModal(exp)}
-                      alignment="left"
-                    />
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
+                )}
+              </div>
+            ))}
         </div>
       </div>
 
@@ -263,16 +299,19 @@ const Experience = () => {
                   {selectedExperience.title}
                 </h2>
                 <div className="flex flex-wrap items-center gap-4 text-gray-300">
-                  <span className="font-semibold">{selectedExperience.company}</span>
+                  <span className="font-semibold">
+                    {selectedExperience.company}
+                  </span>
                   <span className="text-gray-400">•</span>
                   <span>{selectedExperience.location}</span>
                   <span className="text-gray-400">•</span>
                   <span>{selectedExperience.duration}</span>
-                  <span className={`px-2 py-1 rounded text-xs ${
-                    selectedExperience.status === 'Current' 
-                      ? 'bg-green-600 text-white' 
-                      : 'bg-gray-600 text-gray-300'
-                  }`}>
+                  <span
+                    className={`px-2 py-1 rounded text-xs ${selectedExperience.status === "Current"
+                        ? "bg-green-600 text-white"
+                        : "bg-gray-600 text-gray-300"
+                      }`}
+                  >
                     {selectedExperience.status}
                   </span>
                 </div>
@@ -289,7 +328,9 @@ const Experience = () => {
             <div className="flex-1 overflow-y-auto scrollbar-hide p-6">
               {/* Skills Section */}
               <div className="mb-6">
-                <h3 className="text-lg font-semibold text-green-400 mb-3">Skills & Technologies</h3>
+                <h3 className="text-lg font-semibold text-green-400 mb-3">
+                  Skills & Technologies
+                </h3>
                 <div className="flex flex-wrap gap-2">
                   {selectedExperience.skills.map((skill, index) => (
                     <span
@@ -305,40 +346,93 @@ const Experience = () => {
               {/* Detailed Description */}
               <div className="prose prose-invert prose-green max-w-none text-left">
                 <div className="text-gray-300 whitespace-pre-wrap leading-relaxed">
-                  {selectedExperience.detailedDescription.split('\n').map((line, index) => {
-                    if (line.startsWith('# ')) {
-                      return <h1 key={index} className="text-2xl font-bold text-green-400 mt-6 mb-4 text-left">{line.substring(2)}</h1>;
-                    } else if (line.startsWith('## ')) {
-                      return <h2 key={index} className="text-xl font-semibold text-green-300 mt-5 mb-3 text-left">{line.substring(3)}</h2>;
-                    } else if (line.startsWith('### ')) {
-                      return <h3 key={index} className="text-lg font-medium text-green-200 mt-4 mb-2 text-left">{line.substring(4)}</h3>;
-                    } else if (line.startsWith('- ')) {
-                      const bulletText = line.substring(2);
-                      return (
-                        <li key={index} className="text-gray-300 mb-1 ml-4 text-left">
-                          {bulletText.split(/(\*\*[^*]+\*\*)/).map((part, partIndex) => {
-                            if (part.startsWith('**') && part.endsWith('**')) {
-                              return <strong key={partIndex} className="text-green-300 font-semibold">{part.slice(2, -2)}</strong>;
-                            }
-                            return part;
-                          })}
-                        </li>
-                      );
-                    } else if (line.trim() === '') {
-                      return <br key={index} />;
-                    } else {
-                      return (
-                        <p key={index} className="text-gray-300 mb-3 text-left">
-                          {line.split(/(\*\*[^*]+\*\*)/).map((part, partIndex) => {
-                            if (part.startsWith('**') && part.endsWith('**')) {
-                              return <strong key={partIndex} className="text-green-300 font-semibold">{part.slice(2, -2)}</strong>;
-                            }
-                            return part;
-                          })}
-                        </p>
-                      );
-                    }
-                  })}
+                  {selectedExperience.detailedDescription
+                    .split("\n")
+                    .map((line, index) => {
+                      if (line.startsWith("# ")) {
+                        return (
+                          <h1
+                            key={index}
+                            className="text-2xl font-bold text-green-400 mt-6 mb-4 text-left"
+                          >
+                            {line.substring(2)}
+                          </h1>
+                        );
+                      } else if (line.startsWith("## ")) {
+                        return (
+                          <h2
+                            key={index}
+                            className="text-xl font-semibold text-green-300 mt-5 mb-3 text-left"
+                          >
+                            {line.substring(3)}
+                          </h2>
+                        );
+                      } else if (line.startsWith("### ")) {
+                        return (
+                          <h3
+                            key={index}
+                            className="text-lg font-medium text-green-200 mt-4 mb-2 text-left"
+                          >
+                            {line.substring(4)}
+                          </h3>
+                        );
+                      } else if (line.startsWith("- ")) {
+                        const bulletText = line.substring(2);
+                        return (
+                          <li
+                            key={index}
+                            className="text-gray-300 mb-1 ml-4 text-left"
+                          >
+                            {bulletText
+                              .split(/(\*\*[^*]+\*\*)/)
+                              .map((part, partIndex) => {
+                                if (
+                                  part.startsWith("**") &&
+                                  part.endsWith("**")
+                                ) {
+                                  return (
+                                    <strong
+                                      key={partIndex}
+                                      className="text-green-300 font-semibold"
+                                    >
+                                      {part.slice(2, -2)}
+                                    </strong>
+                                  );
+                                }
+                                return part;
+                              })}
+                          </li>
+                        );
+                      } else if (line.trim() === "") {
+                        return <br key={index} />;
+                      } else {
+                        return (
+                          <p
+                            key={index}
+                            className="text-gray-300 mb-3 text-left"
+                          >
+                            {line
+                              .split(/(\*\*[^*]+\*\*)/)
+                              .map((part, partIndex) => {
+                                if (
+                                  part.startsWith("**") &&
+                                  part.endsWith("**")
+                                ) {
+                                  return (
+                                    <strong
+                                      key={partIndex}
+                                      className="text-green-300 font-semibold"
+                                    >
+                                      {part.slice(2, -2)}
+                                    </strong>
+                                  );
+                                }
+                                return part;
+                              })}
+                          </p>
+                        );
+                      }
+                    })}
                 </div>
               </div>
             </div>
@@ -348,7 +442,9 @@ const Experience = () => {
               <div className="flex gap-3">
                 {selectedExperience.certificate && (
                   <button
-                    onClick={() => openCertificate(selectedExperience.certificate)}
+                    onClick={() =>
+                      openCertificate(selectedExperience.certificate)
+                    }
                     className="px-6 py-2 bg-green-600 hover:bg-green-700 text-white rounded transition-colors duration-300"
                   >
                     Download Certificate
