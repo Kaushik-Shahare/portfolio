@@ -224,65 +224,76 @@ const Experience = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-20">
-      <h1 className="text-5xl font-bold mb-6 text-green-400 pt-20">
+    <div className="flex flex-col items-center justify-center min-h-screen p-8 md:p-20">
+      <h1 className="text-4xl md:text-5xl font-bold mb-6 text-green-400 pt-20">
         Experience
       </h1>
       <div className="relative w-full max-w-6xl">
-        {/* Central Timeline Line */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-green-400 via-green-500 to-green-600"></div>
+        {/* Central Timeline Line - Hidden on mobile */}
+        <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-green-400 via-green-500 to-green-600"></div>
 
-        <div className="relative space-y-16">
+        <div className="relative space-y-8 md:space-y-16">
           {experiences
             .slice()
             .reverse()
             .map((exp, index) => (
-              <div
-                key={exp.id}
-                className={`flex items-center w-full ${index % 2 === 0
+              <div key={exp.id} className="w-full">
+                {/* Mobile Layout - Single column */}
+                <div className="block md:hidden w-full">
+                  <ExperienceDiv
+                    exp={exp}
+                    index={index}
+                    onViewDetails={() => openModal(exp)}
+                    alignment="center"
+                  />
+                </div>
+
+                {/* Desktop Layout - Timeline */}
+                <div className={`hidden md:flex items-center w-full ${
+                  index % 2 === 0
                     ? "justify-start pr-1/2"
                     : "justify-end pl-1/2"
-                  }`}
-              >
-                {index % 2 === 0 ? (
-                  <div className="flex items-center w-full">
-                    <div className="w-1/2 pr-8">
-                      <ExperienceDiv
-                        exp={exp}
-                        index={index}
-                        onViewDetails={() => openModal(exp)}
-                        alignment="right"
-                      />
+                }`}>
+                  {index % 2 === 0 ? (
+                    <div className="flex items-center w-full">
+                      <div className="w-1/2 pr-8">
+                        <ExperienceDiv
+                          exp={exp}
+                          index={index}
+                          onViewDetails={() => openModal(exp)}
+                          alignment="right"
+                        />
+                      </div>
+                      {/* Timeline dot */}
+                      <div className="relative flex-shrink-0">
+                        <div className="w-6 h-6 bg-green-400 rounded-full border-4 border-gray-900 z-10 relative"></div>
+                        {/* Arrow pointing from timeline to card */}
+                        <div className="absolute top-1/2 right-6 transform -translate-y-1/2 w-8 h-0.5 bg-green-400"></div>
+                        <div className="absolute top-1/2 right-6 transform -translate-y-1/2 translate-x-8 w-0 h-0 border-l-4 border-l-green-400 border-t-2 border-t-transparent border-b-2 border-b-transparent"></div>
+                      </div>
+                      <div className="w-1/2"></div>
                     </div>
-                    {/* Timeline dot */}
-                    <div className="relative flex-shrink-0">
-                      <div className="w-6 h-6 bg-green-400 rounded-full border-4 border-gray-900 z-10 relative"></div>
-                      {/* Arrow pointing from timeline to card */}
-                      <div className="absolute top-1/2 right-6 transform -translate-y-1/2 w-8 h-0.5 bg-green-400"></div>
-                      <div className="absolute top-1/2 right-6 transform -translate-y-1/2 translate-x-8 w-0 h-0 border-l-4 border-l-green-400 border-t-2 border-t-transparent border-b-2 border-b-transparent"></div>
+                  ) : (
+                    <div className="flex items-center w-full">
+                      <div className="w-1/2"></div>
+                      {/* Timeline dot */}
+                      <div className="relative flex-shrink-0">
+                        <div className="w-6 h-6 bg-green-400 rounded-full border-4 border-gray-900 z-10 relative"></div>
+                        {/* Arrow pointing from timeline to card */}
+                        <div className="absolute top-1/2 left-6 transform -translate-y-1/2 w-8 h-0.5 bg-green-400"></div>
+                        <div className="absolute top-1/2 left-6 transform -translate-y-1/2 -translate-x-8 w-0 h-0 border-r-4 border-r-green-400 border-t-2 border-t-transparent border-b-2 border-b-transparent"></div>
+                      </div>
+                      <div className="w-1/2 pl-8">
+                        <ExperienceDiv
+                          exp={exp}
+                          index={index}
+                          onViewDetails={() => openModal(exp)}
+                          alignment="left"
+                        />
+                      </div>
                     </div>
-                    <div className="w-1/2"></div>
-                  </div>
-                ) : (
-                  <div className="flex items-center w-full">
-                    <div className="w-1/2"></div>
-                    {/* Timeline dot */}
-                    <div className="relative flex-shrink-0">
-                      <div className="w-6 h-6 bg-green-400 rounded-full border-4 border-gray-900 z-10 relative"></div>
-                      {/* Arrow pointing from timeline to card */}
-                      <div className="absolute top-1/2 left-6 transform -translate-y-1/2 w-8 h-0.5 bg-green-400"></div>
-                      <div className="absolute top-1/2 left-6 transform -translate-y-1/2 -translate-x-8 w-0 h-0 border-r-4 border-r-green-400 border-t-2 border-t-transparent border-b-2 border-b-transparent"></div>
-                    </div>
-                    <div className="w-1/2 pl-8">
-                      <ExperienceDiv
-                        exp={exp}
-                        index={index}
-                        onViewDetails={() => openModal(exp)}
-                        alignment="left"
-                      />
-                    </div>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
             ))}
         </div>

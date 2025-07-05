@@ -6,14 +6,14 @@ import projects from "./projectsList";
 const Projects = () => {
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen p-4 matrix-theme">
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-green-400 glitch-text pt-20 z-20">
+      <h1 className="text-4xl md:text-5xl font-bold mb-6 text-green-400 pt-20 z-20">
         My Projects
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-screen-xl z-20">
         {projects.slice().reverse().map((project) => (
           <div
             key={project.id}
-            className="group relative p-6 rounded-lg shadow-2xl glass-card glitch-box flex flex-col justify-between z-20 hover:border-green-400 hover:shadow-green-500/20 transition-all duration-300 transform hover:scale-105"
+            className="group relative bg-black bg-opacity-80 border border-green-400 rounded-lg p-6 hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-400/20 flex flex-col justify-between z-20"
           >
             {/* Project Image/Preview */}
             <div className="relative overflow-hidden rounded-lg mb-4 h-48">
@@ -22,6 +22,12 @@ const Projects = () => {
                   src={project.photos[0]}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  style={project.id === 8 ? { 
+                    objectFit: 'cover',
+                    objectPosition: 'top',
+                    height: '192px',
+                    transform: 'scale(1.5) translateY(-15%)'
+                  } : {}}
                   onError={(e) => {
                     e.target.style.display = 'none';
                     e.target.nextSibling.style.display = 'flex';
@@ -29,13 +35,16 @@ const Projects = () => {
                 />
               ) : null}
               <div 
-                className="w-full h-full bg-black/30 flex items-center justify-center"
+                className="w-full h-full bg-green-400 bg-opacity-10 rounded-lg border border-green-400 border-opacity-30 flex items-center justify-center"
                 style={{ display: project.photos && project.photos.length > 0 ? 'none' : 'flex' }}
               >
-                <div className="text-6xl text-green-400/50">
-                  {project.techStack && project.techStack[0] === 'React' ? 'R' : 
-                   project.techStack && project.techStack[0] === 'Python' ? 'P' : 
-                   project.techStack && project.techStack[0] === 'JavaScript' ? 'JS' : 'T'}
+                <div className="text-center">
+                  <div className="text-6xl text-green-400/50 mb-2">
+                    {project.techStack && project.techStack[0] === 'React' ? 'R' : 
+                     project.techStack && project.techStack[0] === 'Python' ? 'P' : 
+                     project.techStack && project.techStack[0] === 'JavaScript' ? 'JS' : 'T'}
+                  </div>
+                  <p className="text-green-400 text-xs">Project</p>
                 </div>
               </div>
               
@@ -45,12 +54,12 @@ const Projects = () => {
                   <p className="text-green-400 font-semibold mb-2">Tech Stack</p>
                   <div className="flex flex-wrap justify-center gap-1">
                     {project.techStack.slice(0, 3).map((tech, index) => (
-                      <span key={index} className="px-2 py-1 bg-green-500/20 text-green-300 rounded text-xs">
+                      <span key={index} className="px-2 py-1 bg-green-400 bg-opacity-20 border border-green-400 text-green-400 rounded text-xs">
                         {tech}
                       </span>
                     ))}
                     {project.techStack.length > 3 && (
-                      <span className="px-2 py-1 bg-green-500/20 text-green-300 rounded text-xs">
+                      <span className="px-2 py-1 bg-green-400 bg-opacity-20 border border-green-400 text-green-400 rounded text-xs">
                         +{project.techStack.length - 3}
                       </span>
                     )}
@@ -63,7 +72,7 @@ const Projects = () => {
               <h2 className="text-xl sm:text-2xl font-bold mb-3 text-green-400 group-hover:text-green-300 transition-colors duration-300">
                 {project.title}
               </h2>
-              <p className="text-gray-300 text-sm sm:text-base mb-4 line-clamp-3">
+              <p className="text-green-200 text-sm sm:text-base mb-4 line-clamp-3">
                 {project.shortDescription}
               </p>
               
@@ -74,7 +83,7 @@ const Projects = () => {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs px-3 py-1 bg-green-600 hover:bg-green-700 text-white rounded transition-colors duration-300"
+                    className="text-xs px-3 py-1 bg-green-400 bg-opacity-20 border border-green-400 text-green-400 rounded hover:bg-opacity-30 transition-colors duration-300"
                   >
                     Live Demo
                   </a>
@@ -84,7 +93,7 @@ const Projects = () => {
                     href={project.gitHub}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs px-3 py-1 bg-gray-700 hover:bg-gray-600 text-white rounded transition-colors duration-300"
+                    className="text-xs px-3 py-1 bg-transparent border border-green-400 text-green-400 rounded hover:bg-green-400 hover:text-black transition-colors duration-300"
                   >
                     GitHub
                   </a>
@@ -94,7 +103,7 @@ const Projects = () => {
             
             <Link
               to={`/projects/${project.id}`}
-              className="inline-block text-center bg-green-700/80 hover:bg-green-600/90 text-white font-semibold py-2 px-4 rounded transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-green-500/25"
+              className="inline-block text-center bg-green-400 bg-opacity-20 border border-green-400 text-green-400 rounded hover:bg-opacity-30 transition-all duration-300 transform hover:scale-105 font-medium py-2 px-4"
             >
               View Details →
             </Link>

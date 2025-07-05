@@ -56,30 +56,30 @@ const ContactMe = () => {
   return (
     <div
       id="contactMe"
-      className="relative flex items-center justify-center min-h-screen p-4 sm:p-6 md:p-8 matrix-theme"
+      className="relative flex items-center justify-center min-h-screen p-4 sm:p-6 md:p-8"
     >
-      <div className={`relative z-10 glassy-container w-full max-w-4xl flex flex-col md:flex-row shadow-2xl border border-green-400/60 ${isFormVisible ? "fade-in-up" : "opacity-0"}`}>
+      <div className={`relative z-10 bg-black bg-opacity-80 border border-green-400 rounded-lg w-full max-w-4xl flex flex-col md:flex-row shadow-2xl hover:bg-opacity-90 transition-all duration-300 ${isFormVisible ? "fade-in-up" : "opacity-0"}`}>
         {/* Contact Info Section */}
-        <div className="md:w-1/2 md:pr-8 text-green-300 text-left mb-8 md:mb-0 flex flex-col justify-center animate-slide-in-left pl-4">
-          <h2 className="text-3xl font-extrabold mb-8 text-center md:text-left glitch-text">
+        <div className="md:w-1/2 md:pr-8 text-green-300 text-left mb-8 md:mb-0 flex flex-col justify-center pl-6">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-green-400 pt-20 text-center md:text-left">
             Contact Information
-          </h2>
+          </h1>
           <div className="space-y-6 text-lg">
             <div className="flex items-center gap-3 hover:scale-105 transition-transform">
-              <FaUser className="icon-glow" />
-              <span className="glow-text font-semibold">Kaushik Shahare</span>
+              <FaUser className="text-green-400" />
+              <span className="text-green-200 font-semibold">Kaushik Shahare</span>
             </div>
             <div className="flex items-center gap-3 hover:scale-105 transition-transform">
-              <FaEnvelope className="icon-glow" />
-              <span className="glow-text font-semibold">kaushikshahare4@gmail.com</span>
+              <FaEnvelope className="text-green-400" />
+              <span className="text-green-200 font-semibold">kaushikshahare4@gmail.com</span>
             </div>
             <div className="flex items-center gap-3 hover:scale-105 transition-transform">
-              <FaPhoneAlt className="icon-glow" />
-              <span className="glow-text font-semibold">+91 935-913-9756</span>
+              <FaPhoneAlt className="text-green-400" />
+              <span className="text-green-200 font-semibold">+91 935-913-9756</span>
             </div>
             <div className="flex items-center gap-3 hover:scale-105 transition-transform">
-              <FaMapMarkerAlt className="icon-glow" />
-              <span className="glow-text font-semibold">Thane, India</span>
+              <FaMapMarkerAlt className="text-green-400" />
+              <span className="text-green-200 font-semibold">Thane, India</span>
             </div>
           </div>
         </div>
@@ -87,16 +87,16 @@ const ContactMe = () => {
         {/* Contact Form Section */}
         <form
           onSubmit={handleSubmit}
-          className="md:w-1/2 glassy-form p-8 rounded-xl border border-green-400/60 shadow-lg animate-slide-in-right"
+          className="md:w-1/2 bg-green-400 bg-opacity-10 p-8 rounded-lg border border-green-400 border-opacity-30 m-6"
           autoComplete="off"
         >
-          <h2 className="text-3xl font-extrabold text-green-300 glitch-text mb-8 text-center md:text-left">
+          <h2 className="text-3xl font-bold text-green-400 mb-8 text-center md:text-left">
             Contact Me
           </h2>
           {isSent && (
-            <p className="text-green-400 mb-4 animate-fade-in">Message sent successfully!</p>
+            <p className="text-green-400 mb-4">Message sent successfully!</p>
           )}
-          {error && <p className="text-red-400 mb-4 animate-fade-in">{error}</p>}
+          {error && <p className="text-red-400 mb-4">{error}</p>}
           <div className="mb-6 relative">
             <input
               type="text"
@@ -104,11 +104,11 @@ const ContactMe = () => {
               id="name"
               value={formData.name}
               onChange={handleChange}
-              className="floating-input peer w-full p-4 rounded-lg bg-transparent text-green-200 border border-green-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full p-4 rounded-lg bg-transparent text-green-200 border border-green-400 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-400"
+              placeholder="Name"
               required
               autoComplete="off"
             />
-            <label htmlFor="name" className="floating-label">Name</label>
           </div>
           <div className="mb-6 relative">
             <input
@@ -117,11 +117,11 @@ const ContactMe = () => {
               id="email"
               value={formData.email}
               onChange={handleChange}
-              className="floating-input peer w-full p-4 rounded-lg bg-transparent text-green-200 border border-green-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full p-4 rounded-lg bg-transparent text-green-200 border border-green-400 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-400"
+              placeholder="Email"
               required
               autoComplete="off"
             />
-            <label htmlFor="email" className="floating-label">Email</label>
           </div>
           <div className="mb-8 relative">
             <textarea
@@ -130,22 +130,20 @@ const ContactMe = () => {
               value={formData.message}
               onChange={handleChange}
               rows="5"
-              className="floating-input peer w-full p-4 rounded-lg bg-transparent text-green-200 border border-green-400 focus:outline-none focus:ring-2 focus:ring-green-500 resize-y overflow-y-auto"
+              className="w-full p-4 rounded-lg bg-transparent text-green-200 border border-green-400 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-400 resize-y overflow-y-auto"
+              placeholder="Message"
               required
             ></textarea>
-            <label htmlFor="message" className="floating-label">Message</label>
           </div>
           <button
             type="submit"
-            className="w-full p-4 rounded-lg font-bold flex items-center justify-center gap-2 send-btn-glow hover:scale-105 transition-transform duration-300"
+            className="w-full p-4 rounded-lg font-bold flex items-center justify-center gap-2 bg-green-400 bg-opacity-20 border border-green-400 text-green-400 hover:bg-opacity-30 transition-all duration-300 hover:scale-105"
           >
             <span>Send Message</span>
-            <FaPaperPlane className="animate-send-icon" />
+            <FaPaperPlane />
           </button>
         </form>
       </div>
-      {/* Matrix Rain Overlay */}
-      <div className="absolute inset-0 z-0 pointer-events-none animate-matrix-rain"></div>
     </div>
   );
 };
