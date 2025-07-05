@@ -6,7 +6,7 @@ import projects from "./projectsList";
 const Projects = () => {
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen p-4 matrix-theme">
-      <h1 className="text-4xl md:text-5xl font-bold mb-6 text-green-400 pt-20 z-20">
+      <h1 className="text-3xl md:text-4xl font-bold mb-8 text-green-400 pt-20 z-20">
         My Projects
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-screen-xl z-20">
@@ -69,10 +69,10 @@ const Projects = () => {
             </div>
 
             <div className="flex-grow">
-              <h2 className="text-xl sm:text-2xl font-bold mb-3 text-green-400 group-hover:text-green-300 transition-colors duration-300">
+              <h2 className="text-lg font-semibold mb-3 text-green-400 group-hover:text-green-300 transition-colors duration-300">
                 {project.title}
               </h2>
-              <p className="text-green-200 text-sm sm:text-base mb-4 line-clamp-3">
+              <p className="text-green-200 text-sm mb-4 line-clamp-3">
                 {project.shortDescription}
               </p>
               
@@ -83,7 +83,7 @@ const Projects = () => {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs px-3 py-1 bg-green-400 bg-opacity-20 border border-green-400 text-green-400 rounded hover:bg-opacity-30 transition-colors duration-300"
+                    className="text-xs px-3 py-2 bg-green-400 bg-opacity-20 border border-green-400 text-green-400 rounded hover:bg-opacity-30 transition-colors duration-300"
                   >
                     Live Demo
                   </a>
@@ -93,7 +93,7 @@ const Projects = () => {
                     href={project.gitHub}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs px-3 py-1 bg-transparent border border-green-400 text-green-400 rounded hover:bg-green-400 hover:text-black transition-colors duration-300"
+                    className="text-xs px-3 py-2 bg-transparent border border-green-400 text-green-400 rounded hover:bg-green-400 hover:text-black transition-colors duration-300"
                   >
                     GitHub
                   </a>
@@ -103,7 +103,7 @@ const Projects = () => {
             
             <Link
               to={`/projects/${project.id}`}
-              className="inline-block text-center bg-green-400 bg-opacity-20 border border-green-400 text-green-400 rounded hover:bg-opacity-30 transition-all duration-300 transform hover:scale-105 font-medium py-2 px-4"
+              className="inline-block text-center bg-green-400 bg-opacity-20 border border-green-400 text-green-400 rounded hover:bg-opacity-30 transition-all duration-300 transform hover:scale-105 font-medium py-2 px-4 text-sm"
             >
               View Details →
             </Link>

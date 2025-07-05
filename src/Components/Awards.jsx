@@ -45,11 +45,11 @@ const Awards = () => {
       <div className="max-w-6xl mx-auto pt-20">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-green-400 pt-20">
+          <h1 className="text-3xl md:text-4xl font-bold mb-8 text-green-400 pt-20">
             Awards & Achievements
           </h1>
           <div className="w-24 h-1 bg-green-400 mx-auto mb-6"></div>
-          <p className="text-green-300 text-lg max-w-2xl mx-auto">
+          <p className="text-green-300 text-base max-w-2xl mx-auto">
             Recognition and certifications that showcase my dedication to continuous learning and excellence in development.
           </p>
         </div>

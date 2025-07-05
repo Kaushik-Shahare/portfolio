@@ -3,7 +3,7 @@ import React from "react";
 const AboutMe = () => {
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen p-6">
-      <h1 className="text-4xl md:text-5xl font-bold mb-6 text-green-400 pt-20">
+      <h1 className="text-3xl md:text-4xl font-bold mb-8 text-green-400 pt-20">
         About Me
       </h1>
       <div className="bg-black bg-opacity-80 border border-green-400 rounded-lg p-8 hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-400/20 flex flex-col lg:flex-row items-center justify-center gap-8 w-full max-w-6xl">
@@ -17,7 +17,7 @@ const AboutMe = () => {
         </div>
 
         {/* Text Content */}
-        <div className="text-base sm:text-lg md:text-xl text-center lg:text-left max-w-lg text-green-200 mt-6 lg:mt-0">
+        <div className="text-base text-center lg:text-left max-w-lg text-green-200 mt-6 lg:mt-0">
           <p className="mb-6">
             Hello! I'm <strong className="text-green-400">Kaushik Shahare</strong>, a dedicated Software Engineer 
             with a strong focus on <strong className="text-green-400">Backend Development</strong>. 
@@ -33,13 +33,13 @@ const AboutMe = () => {
           <div className="mt-6 flex flex-col lg:flex-row lg:justify-start space-y-4 lg:space-y-0 lg:space-x-4">
             <a
               href="https://linkedin.com/in/kaushik-shahare-84bba7267"
-              className="px-4 py-2 bg-green-400 bg-opacity-20 border border-green-400 text-green-400 rounded hover:bg-opacity-30 transition-all duration-300 text-center"
+              className="px-4 py-2 bg-green-400 bg-opacity-20 border border-green-400 text-green-400 rounded hover:bg-opacity-30 transition-all duration-300 text-center text-sm"
             >
               LinkedIn
             </a>
             <a
               href="https://github.com/Kaushik-Shahare"
-              className="px-4 py-2 bg-transparent border border-green-400 text-green-400 rounded hover:bg-green-400 hover:text-black transition-all duration-300 text-center"
+              className="px-4 py-2 bg-transparent border border-green-400 text-green-400 rounded hover:bg-green-400 hover:text-black transition-all duration-300 text-center text-sm"
             >
               GitHub
             </a>

@@ -20,11 +20,11 @@ const ProjectDetails = () => {
         <div className="absolute inset-0 bg-black bg-opacity-95 z-40"></div>
         <Navbar />
         <div className="text-center relative z-50">
-          <h1 className="text-4xl font-bold mb-4 relative z-50">Project Not Found</h1>
-          <p className="text-green-300 mb-6 relative z-50">The project you're looking for doesn't exist.</p>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 relative z-50">Project Not Found</h1>
+          <p className="text-green-300 mb-6 relative z-50 text-base">The project you're looking for doesn't exist.</p>
           <Link
             to="/"
-            className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded transition-colors duration-300 relative z-50"
+            className="px-4 py-2 bg-transparent border border-green-400 text-green-400 rounded hover:bg-green-400 hover:text-black transition-colors duration-300 relative z-50 text-sm"
           >
             Back to Portfolio
           </Link>
@@ -66,7 +66,7 @@ const ProjectDetails = () => {
           <div className="mb-8">
             <Link
               to="/"
-              className="inline-flex items-center px-4 py-2 bg-gray-800 hover:bg-gray-700 text-green-400 border border-green-400 rounded transition-colors duration-300"
+              className="inline-flex items-center px-4 py-2 bg-transparent border border-green-400 text-green-400 rounded hover:bg-green-400 hover:text-black transition-colors duration-300 text-sm"
             >
               ← Back to Portfolio
             </Link>
@@ -74,43 +74,44 @@ const ProjectDetails = () => {
 
           {/* Header Section */}
           <div className="mb-12 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-green-400 mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-green-400 mb-8">
               {project.title}
             </h1>
             <div className="w-24 h-1 bg-green-400 mx-auto mb-6"></div>
-            <p className="text-green-300 text-lg max-w-3xl mx-auto">
+            <p className="text-green-200 text-base max-w-3xl mx-auto">
               {project.shortDescription}
             </p>
           </div>
 
           {/* Quick Action Buttons */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">          {project.link && (
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded transition-colors duration-300 font-semibold"
-            >
-              Live Demo
-            </a>
-          )}
-          {project.gitHub && (
-            <a
-              href={project.gitHub}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded transition-colors duration-300 font-semibold"
-            >
-              View on GitHub
-            </a>
-          )}
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-green-400 bg-opacity-20 border border-green-400 text-green-400 rounded hover:bg-opacity-30 transition-colors duration-300 text-sm"
+              >
+                Live Demo
+              </a>
+            )}
+            {project.gitHub && (
+              <a
+                href={project.gitHub}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-transparent border border-green-400 text-green-400 rounded hover:bg-green-400 hover:text-black transition-colors duration-300 text-sm"
+              >
+                View on GitHub
+              </a>
+            )}
           </div>
 
           {/* Media Carousel Section */}
           {(project.photos?.length > 0 || project.video?.length > 0) && (
             <div className="mb-16">
-              <h2 className="text-2xl font-bold text-green-400 mb-6 text-center">Project Gallery</h2>
-              <div className="glass-card border border-green-400/30 rounded-lg p-4">
+              <h2 className="text-xl font-bold text-green-400 mb-6 text-center">Project Gallery</h2>
+              <div className="bg-black bg-opacity-80 border border-green-400 rounded-lg p-6">
                 <Slider {...settings}>
                   {project.video?.map((video, index) => (
                     <div key={`video-${index}`} className="px-2">
@@ -145,15 +146,15 @@ const ProjectDetails = () => {
           {/* Tech Stack and Libraries Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {/* Tech Stack Section */}
-            <div className="glass-card border border-green-400/30 rounded-lg p-6">
-              <h2 className="text-2xl font-bold text-green-400 mb-4 flex items-center">
+            <div className="bg-black bg-opacity-80 border border-green-400 rounded-lg p-6">
+              <h2 className="text-xl font-bold text-green-400 mb-4 flex items-center">
                 Tech Stack
               </h2>
               <div className="flex flex-wrap gap-2">
                 {project.techStack?.map((tech, index) => (
                   <span
                     key={index}
-                    className="px-3 py-1 bg-green-600/20 text-green-300 rounded-full text-sm border border-green-600/30"
+                    className="px-3 py-1 bg-green-400 bg-opacity-20 border border-green-400 text-green-400 rounded-full text-sm"
                   >
                     {tech}
                   </span>
@@ -162,15 +163,15 @@ const ProjectDetails = () => {
             </div>
 
             {/* Libraries Section */}
-            <div className="glass-card border border-green-400/30 rounded-lg p-6">
-              <h2 className="text-2xl font-bold text-green-400 mb-4 flex items-center">
+            <div className="bg-black bg-opacity-80 border border-green-400 rounded-lg p-6">
+              <h2 className="text-xl font-bold text-green-400 mb-4 flex items-center">
                 Libraries & Tools
               </h2>
               <div className="flex flex-wrap gap-2">
                 {project.libraries?.map((library, index) => (
                   <span
                     key={index}
-                    className="px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full text-sm border border-blue-600/30"
+                    className="px-3 py-1 bg-green-400 bg-opacity-20 border border-green-400 text-green-400 rounded-full text-sm"
                   >
                     {library}
                   </span>
@@ -180,33 +181,33 @@ const ProjectDetails = () => {
           </div>
 
           {/* Detailed Description Section */}
-          <div className="glass-card border border-green-400/30 rounded-lg p-8 mb-12">
-            <h2 className="text-3xl font-bold text-green-400 mb-6">Project Overview</h2>
+          <div className="bg-black bg-opacity-80 border border-green-400 rounded-lg p-6 mb-12">
+            <h2 className="text-xl font-bold text-green-400 mb-6">Project Overview</h2>
             <div className="prose prose-invert prose-green max-w-none text-left">
               <ReactMarkdown
                 components={{
                   h1: ({ children, ...props }) => (
-                    <h1 className="text-3xl font-bold text-green-400 mt-8 mb-4 text-left" {...props}>
+                    <h1 className="text-xl font-bold text-green-400 mt-8 mb-4 text-left" {...props}>
                       {children}
                     </h1>
                   ),
                   h2: ({ children, ...props }) => (
-                    <h2 className="text-2xl font-semibold text-green-300 mt-6 mb-3 text-left" {...props}>
+                    <h2 className="text-lg font-semibold text-green-300 mt-6 mb-3 text-left" {...props}>
                       {children}
                     </h2>
                   ),
                   h3: ({ children, ...props }) => (
-                    <h3 className="text-xl font-medium text-green-200 mt-4 mb-2 text-left" {...props}>
+                    <h3 className="text-base font-medium text-green-200 mt-4 mb-2 text-left" {...props}>
                       {children}
                     </h3>
                   ),
                   p: ({ children, ...props }) => (
-                    <p className="text-gray-300 text-lg leading-relaxed mb-4 text-left" {...props}>
+                    <p className="text-gray-300 text-base leading-relaxed mb-4 text-left" {...props}>
                       {children}
                     </p>
                   ),
                   li: ({ children, ...props }) => (
-                    <li className="text-gray-300 mb-1 text-left" {...props}>
+                    <li className="text-gray-300 mb-1 text-left text-sm" {...props}>
                       {children}
                     </li>
                   ),
@@ -239,33 +240,33 @@ const ProjectDetails = () => {
 
           {/* Additional Information Section */}
           {project.additionalInfo && (
-            <div className="glass-card border border-green-400/30 rounded-lg p-8 mb-12">
-              <h2 className="text-3xl font-bold text-green-400 mb-6">Additional Information</h2>
+            <div className="bg-black bg-opacity-80 border border-green-400 rounded-lg p-6 mb-12">
+              <h2 className="text-xl font-bold text-green-400 mb-6">Additional Information</h2>
               <div className="prose prose-invert prose-green max-w-none text-left">
                 <ReactMarkdown
                   components={{
                     h1: ({ children, ...props }) => (
-                      <h1 className="text-3xl font-bold text-green-400 mt-8 mb-4 text-left" {...props}>
+                      <h1 className="text-xl font-bold text-green-400 mt-8 mb-4 text-left" {...props}>
                         {children}
                       </h1>
                     ),
                     h2: ({ children, ...props }) => (
-                      <h2 className="text-2xl font-semibold text-green-300 mt-6 mb-3 text-left" {...props}>
+                      <h2 className="text-lg font-semibold text-green-300 mt-6 mb-3 text-left" {...props}>
                         {children}
                       </h2>
                     ),
                     h3: ({ children, ...props }) => (
-                      <h3 className="text-xl font-medium text-green-200 mt-4 mb-2 text-left" {...props}>
+                      <h3 className="text-base font-medium text-green-200 mt-4 mb-2 text-left" {...props}>
                         {children}
                       </h3>
                     ),
                     p: ({ children, ...props }) => (
-                      <p className="text-gray-300 text-lg leading-relaxed mb-4 text-left" {...props}>
+                      <p className="text-gray-300 text-base leading-relaxed mb-4 text-left" {...props}>
                         {children}
                       </p>
                     ),
                     li: ({ children, ...props }) => (
-                      <li className="text-gray-300 mb-1 text-left" {...props}>
+                      <li className="text-gray-300 mb-1 text-left text-sm" {...props}>
                         {children}
                       </li>
                     ),
@@ -304,7 +305,7 @@ const ProjectDetails = () => {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors duration-300 font-semibold text-lg"
+                className="px-4 py-2 bg-green-400 bg-opacity-20 border border-green-400 text-green-400 rounded hover:bg-opacity-30 transition-colors duration-300 text-sm"
               >
                 Launch Project
               </a>
@@ -314,14 +315,14 @@ const ProjectDetails = () => {
                 href={project.gitHub}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors duration-300 font-semibold text-lg"
+                className="px-4 py-2 bg-transparent border border-green-400 text-green-400 rounded hover:bg-green-400 hover:text-black transition-colors duration-300 text-sm"
               >
                 Explore Code
               </a>
             )}
             <Link
               to="/"
-              className="px-8 py-4 bg-transparent border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-black rounded-lg transition-all duration-300 font-semibold text-lg"
+              className="px-4 py-2 bg-transparent border border-green-400 text-green-400 hover:bg-green-400 hover:text-black rounded transition-all duration-300 text-sm"
             >
               ← Back to Portfolio
             </Link>

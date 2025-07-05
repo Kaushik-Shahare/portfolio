@@ -225,7 +225,7 @@ const Experience = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-8 md:p-20">
-      <h1 className="text-4xl md:text-5xl font-bold mb-6 text-green-400 pt-20">
+      <h1 className="text-3xl md:text-4xl font-bold mb-8 text-green-400 pt-20">
         Experience
       </h1>
       <div className="relative w-full max-w-6xl">

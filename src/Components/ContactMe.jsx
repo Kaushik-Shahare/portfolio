@@ -61,10 +61,10 @@ const ContactMe = () => {
       <div className={`relative z-10 bg-black bg-opacity-80 border border-green-400 rounded-lg w-full max-w-4xl flex flex-col md:flex-row shadow-2xl hover:bg-opacity-90 transition-all duration-300 ${isFormVisible ? "fade-in-up" : "opacity-0"}`}>
         {/* Contact Info Section */}
         <div className="md:w-1/2 md:pr-8 text-green-300 text-left mb-8 md:mb-0 flex flex-col justify-center pl-6">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-green-400 pt-20 text-center md:text-left">
+          <h1 className="text-3xl md:text-4xl font-bold mb-8 text-green-400 pt-20 text-center md:text-left">
             Contact Information
           </h1>
-          <div className="space-y-6 text-lg">
+          <div className="space-y-6 text-base">
             <div className="flex items-center gap-3 hover:scale-105 transition-transform">
               <FaUser className="text-green-400" />
               <span className="text-green-200 font-semibold">Kaushik Shahare</span>
@@ -90,7 +90,7 @@ const ContactMe = () => {
           className="md:w-1/2 bg-green-400 bg-opacity-10 p-8 rounded-lg border border-green-400 border-opacity-30 m-6"
           autoComplete="off"
         >
-          <h2 className="text-3xl font-bold text-green-400 mb-8 text-center md:text-left">
+          <h2 className="text-xl font-bold text-green-400 mb-8 text-center md:text-left">
             Contact Me
           </h2>
           {isSent && (
