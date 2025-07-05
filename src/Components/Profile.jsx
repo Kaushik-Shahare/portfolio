@@ -109,8 +109,32 @@ const Profile = () => {
 
       {/* Main Profile Content */}
       <div className="relative flex flex-col lg:flex-row justify-between w-full max-w-7xl mx-auto px-4 z-10 items-center gap-8 lg:gap-16">
+        {/* Profile Picture - Mobile First, Desktop Right */}
+        <div className="flex-shrink-0 order-1 lg:order-2">
+          <div
+            className="overflow-hidden rounded-full transform-gpu relative"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            ref={imgRef}
+            style={tiltStyle}
+          >
+            {/* Profile Picture */}
+            <img
+              src="/FormalPhoto1.jpeg"
+              alt="Kaushik Shahare - Software Engineer"
+              className="object-cover w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 z-10 rounded-full"
+              style={{ filter: "grayscale(100%) drop-shadow(0 0 10px #00ff00)" }}
+            />
+            {/* Black Overlay */}
+            <div className="absolute inset-0 bg-black bg-opacity-30 rounded-full z-20"></div>
+
+            {/* Animated Border */}
+            <div className="absolute inset-0 rounded-full border-4 border-green-500 animate-matrix-border"></div>
+          </div>
+        </div>
+
         {/* Left Side - Profile Info */}
-        <div className="flex-1 text-center lg:text-left space-y-6">
+        <div className="flex-1 text-center lg:text-left space-y-6 order-2 lg:order-1">
           {/* Name and Title */}
           <div className="space-y-4">
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-green-400 glow-green">
@@ -191,30 +215,6 @@ const Profile = () => {
             >
               Let's Connect
             </div>
-          </div>
-        </div>
-
-        {/* Right Side - Profile Picture */}
-        <div className="flex-shrink-0">
-          <div
-            className="overflow-hidden rounded-full transform-gpu relative"
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            ref={imgRef}
-            style={tiltStyle}
-          >
-            {/* Profile Picture */}
-            <img
-              src="/FormalPhoto1.jpeg"
-              alt="Kaushik Shahare - Software Engineer"
-              className="object-cover w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 z-10 rounded-full"
-              style={{ filter: "grayscale(100%) drop-shadow(0 0 10px #00ff00)" }}
-            />
-            {/* Black Overlay */}
-            <div className="absolute inset-0 bg-black bg-opacity-30 rounded-full z-20"></div>
-
-            {/* Animated Border */}
-            <div className="absolute inset-0 rounded-full border-4 border-green-500 animate-matrix-border"></div>
           </div>
         </div>
       </div>
