@@ -20,7 +20,7 @@ const Home = () => {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.1 }
     );
 
     const currentSections = sectionRefs.current;
