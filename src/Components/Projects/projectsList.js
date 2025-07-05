@@ -51,22 +51,22 @@ const projects = [
     additionalInfo:
       "This chat app allows real-time communication with a rich user interface.",
   },
-  {
-    id: 3,
-    title: "Portfolio Website",
-    shortDescription:
-      "Showcase of my projects, skills, and experience on my portfolio website.",
-    detailedDescription:
-      "My portfolio website serves as a professional platform to showcase my skills, projects, and experience. Built using React and Next.js, the website features a modern design with smooth animations and intuitive navigation. It includes detailed sections for my resume, project portfolio, and contact information, making it easy for potential employers or collaborators to learn more about me.",
-    link: "https://portfolio-lime-nine-27.vercel.app/",
-    gitHub: "https://github.com/Kaushik-Shahare/portfolio",
-    photos: ["https://raw.githubusercontent.com/Kaushik-Shahare/ChatApp/"],
-    video: ["https://example.com/portfolio.mp4"],
-    techStack: ["React", "Tailwind CSS"],
-    libraries: ["Framer Motion", "React Router"],
-    additionalInfo:
-      "A personal website to showcase my skills, projects, and experience. It includes a resume and contact form.",
-  },
+  // {
+  //   id: 3,
+  //   title: "Portfolio Website",
+  //   shortDescription:
+  //     "Showcase of my projects, skills, and experience on my portfolio website.",
+  //   detailedDescription:
+  //     "My portfolio website serves as a professional platform to showcase my skills, projects, and experience. Built using React and Next.js, the website features a modern design with smooth animations and intuitive navigation. It includes detailed sections for my resume, project portfolio, and contact information, making it easy for potential employers or collaborators to learn more about me.",
+  //   link: "https://portfolio-lime-nine-27.vercel.app/",
+  //   gitHub: "https://github.com/Kaushik-Shahare/portfolio",
+  //   photos: ["https://raw.githubusercontent.com/Kaushik-Shahare/ChatApp/"],
+  //   video: ["https://example.com/portfolio.mp4"],
+  //   techStack: ["React", "Tailwind CSS"],
+  //   libraries: ["Framer Motion", "React Router"],
+  //   additionalInfo:
+  //     "A personal website to showcase my skills, projects, and experience. It includes a resume and contact form.",
+  // },
   {
     id: 4,
     title: "News Summary",

@@ -1,29 +1,43 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaInstagram, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import "./Profile.css";
 
 const Profile = () => {
   const [currentSkillIndex, setCurrentSkillIndex] = useState(0);
   const [fade, setFade] = useState(true);
   const [tiltStyle, setTiltStyle] = useState({});
+  const navigate = useNavigate();
   const skills = [
-    // "Full Stack Developer",
-    // "JavaScript",
-    // "React",
-    // "Node.js",
-    // "Express",
-    // "Python",
-    // "Django",
-    // "MongoDB",
-    // "PostgreSQL",
-    // "REST API",
-    // "Git",
-    // "Docker",
-    // "CI/CD",
-    "Software Engineer",
-    "Backend Developer",
+    "Python", 
+    "Django",
+    "PostgreSQL",
+    "AI Agents",
+    "Langchain",
+    "JavaScript",
+    "Express.js",
+    "MongoDB",
+    "Git",
   ];
   const imgRef = useRef(null);
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Navigate to the home page
+      navigate("/");
+
+      // Retry scrolling after a short delay
+      setTimeout(() => {
+        const retrySection = document.getElementById(id);
+        if (retrySection) {
+          retrySection.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    }
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -63,7 +77,7 @@ const Profile = () => {
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen p-4">
       {/* Social Media Vertical Bar */}
-      <div className="fixed right-4 top-1/2 transform -translate-y-1/2 flex flex-col space-y-5 ">
+      <div className="fixed right-4 top-1/2 transform -translate-y-1/2 flex flex-col space-y-5 z-30">
         <a
           href="https://linkedin.com/in/kaushik-shahare-84bba7267"
           className="text-green-400 hover:text-green-500 transition-colors duration-300 hover:glow-green"
@@ -93,47 +107,115 @@ const Profile = () => {
         </a>
       </div>
 
-      {/* Profile Content */}
-      <div className="relative flex flex-col-reverse sm:flex-row justify-between w-full sm:h-80 px-4 z-10 items-center">
-        <div className="text-left sm:ml-10 mt-8 sm:mt-20 h-40">
-          <div className="hero-container mb-4 sm:mb-8">
-            <h2
-              className="hero glitch layers text-4xl sm:text-7xl md:text-6xl"
-              data-text="Kaushik Shahare"
-            >
-              <span className="text-4xl sm:text-7xl md:text-6xl font-bold animate-bounce-in glow-green">
-                Kaushik Shahare
-              </span>
+      {/* Main Profile Content */}
+      <div className="relative flex flex-col lg:flex-row justify-between w-full max-w-7xl mx-auto px-4 z-10 items-center gap-8 lg:gap-16">
+        {/* Left Side - Profile Info */}
+        <div className="flex-1 text-center lg:text-left space-y-6">
+          {/* Name and Title */}
+          <div className="space-y-4">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-green-400 glow-green">
+              Kaushik Shahare
+            </h1>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl text-green-300 font-semibold">
+              Software Engineer - Backend
             </h2>
+            <div className="w-24 h-1 bg-green-400 mx-auto lg:mx-0"></div>
           </div>
-          <p
-            className={`text-3xl sm:text-5xl text-green-500 transition-opacity duration-500 ${
-              fade ? "opacity-100" : "opacity-0"
-            } animate-fade-in-out glow-green`}
-          >
-            {skills[currentSkillIndex]}
-          </p>
+
+          {/* Tech Stack */}
+          <div className="space-y-3">
+            <h3 className="text-xl text-green-400 font-semibold">Tech Stack</h3>
+            <div className="flex flex-wrap justify-center lg:justify-start gap-2">
+              {skills.map((skill, index) => (
+                <span
+                  key={index}
+                  className="px-3 py-1 bg-green-400 bg-opacity-20 border border-green-400 text-green-400 rounded-full text-sm hover:bg-opacity-30 transition-colors duration-300"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Current Focus */}
+          {/* <div className="space-y-3">
+            <h3 className="text-xl text-green-400 font-semibold">Currently Working With</h3>
+            <p
+              className={`text-xl sm:text-2xl text-green-500 transition-opacity duration-500 ${
+                fade ? "opacity-100" : "opacity-0"
+              } animate-fade-in-out glow-green font-medium`}
+            >
+              {skills[currentSkillIndex]}
+            </p>
+          </div> */}
+
+          {/* Contact Information */}
+          <div className="space-y-4 pt-4">
+            <h3 className="text-xl text-green-400 font-semibold">Contact Information</h3>
+            <div className="space-y-3">
+              {/* Location */}
+              <div className="flex items-center justify-center lg:justify-start gap-3">
+                <FaMapMarkerAlt className="text-green-400" size={18} />
+                <span className="text-green-200 text-base">Mumbai, Maharashtra, India</span>
+              </div>
+              
+              {/* Email */}
+              <div className="flex items-center justify-center lg:justify-start gap-3">
+                <FaEnvelope className="text-green-400" size={18} />
+                <a
+                  href="mailto:kaushikshahare@gmail.com"
+                  className="text-green-200 text-base hover:text-green-400 transition-colors duration-300 hover:underline"
+                >
+                  kaushikshahare4@gmail.com
+                </a>
+              </div>
+              
+              {/* Phone */}
+              <div className="flex items-center justify-center lg:justify-start gap-3">
+                <FaPhone className="text-green-400" size={18} />
+                <a
+                  href="tel:+919359139756"
+                  className="text-green-200 text-base hover:text-green-400 transition-colors duration-300 hover:underline"
+                >
+                  +91 935-913-9756
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="pt-6">
+            <div
+              onClick={() => scrollToSection("contactMe")}
+              className="inline-block px-8 py-3 bg-green-400 bg-opacity-20 border border-green-400 text-green-400 rounded-lg hover:bg-opacity-30 transition-all duration-300 transform hover:scale-105 font-medium text-lg cursor-pointer"
+            >
+              Let's Connect
+            </div>
+          </div>
         </div>
 
-        <div
-          className="overflow-hidden rounded-full mt-8 sm:mt-0 sm:mr-10 transform-gpu relative"
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-          ref={imgRef}
-          style={tiltStyle}
-        >
-          {/* Profile Picture */}
-          <img
-            src="/Profile2.jpeg"
-            alt="Profile"
-            className="object-cover w-40 h-40 sm:w-80 sm:h-80 z-10 rounded-full"
-            style={{ filter: "drop-shadow(0 0 10px #00ff00)" }}
-          />
-          {/* Black Overlay */}
-          <div className="absolute inset-0 bg-black bg-opacity-30 rounded-full z-20"></div>
+        {/* Right Side - Profile Picture */}
+        <div className="flex-shrink-0">
+          <div
+            className="overflow-hidden rounded-full transform-gpu relative"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            ref={imgRef}
+            style={tiltStyle}
+          >
+            {/* Profile Picture */}
+            <img
+              src="/FormalPhoto1.jpeg"
+              alt="Kaushik Shahare - Software Engineer"
+              className="object-cover w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 z-10 rounded-full"
+              style={{ filter: "grayscale(100%) drop-shadow(0 0 10px #00ff00)" }}
+            />
+            {/* Black Overlay */}
+            <div className="absolute inset-0 bg-black bg-opacity-30 rounded-full z-20"></div>
 
-          {/* Animated Border */}
-          <div className="absolute inset-0 rounded-full border-4 border-green-500 animate-matrix-border"></div>
+            {/* Animated Border */}
+            <div className="absolute inset-0 rounded-full border-4 border-green-500 animate-matrix-border"></div>
+          </div>
         </div>
       </div>
 
