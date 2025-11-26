@@ -211,22 +211,75 @@ This project was developed to recreate the popular mobile game MiniMilitia on th
 `,
   },
   {
-  id: 8,
-  title: "MedAudit",
-  shortDescription:
-    "AI-powered multi-agent system for smart hospital operations and insurance claim optimization.",
-  detailedDescription:
-    "Developed during a 36-hour hackathon organized by OnMySite HealthCare at Parul University, CodeBlue – MedAudit is an AI-driven system designed to optimize hospital workflows and minimize insurance claim rejections. Built by Team CodeBlue, the platform uses NFC for secure patient identification and a LangGraph-based multi-agent architecture to parse, validate, and auto-correct insurance documents using Electronic Health Records (EHR). It significantly reduces manual workload, accelerates OPD processes, and improves patient satisfaction by enabling faster and more accurate claim submissions.",
-  link: "https://github.com/Kaushik-Shahare/MedAudit",
-  gitHub: "https://github.com/Kaushik-Shahare/MedAudit",
-  photos: [
-    "https://raw.githubusercontent.com/Kaushik-Shahare/MedAudit/refs/heads/main/ImagesAndVideos/Multi-AgentFlow.jpeg"
-  ],
-  techStack: ["Python", "Django", "LangGraph", "PostgreSQL", "NFC"],
-  libraries: ["LangGraph", "OpenAI", "Pandas", "NumPy", "Django REST Framework", "pdfplumber"],
-  additionalInfo:
-    "Won 2nd Runner-Up (3rd place) among teams from various colleges across India. The system automates EHR validation, reduces denial risks, and saves hospitals over 1,900 hours per month by streamlining insurance processing and OPD check-ins."
-}
+    id: 8,
+    title: "MedAudit",
+    shortDescription:
+      "AI-powered multi-agent system for smart hospital operations and insurance claim optimization.",
+    detailedDescription:
+      "Developed during a 36-hour hackathon organized by OnMySite HealthCare at Parul University, CodeBlue – MedAudit is an AI-driven system designed to optimize hospital workflows and minimize insurance claim rejections. Built by Team CodeBlue, the platform uses NFC for secure patient identification and a LangGraph-based multi-agent architecture to parse, validate, and auto-correct insurance documents using Electronic Health Records (EHR). It significantly reduces manual workload, accelerates OPD processes, and improves patient satisfaction by enabling faster and more accurate claim submissions.",
+    link: "https://github.com/Kaushik-Shahare/MedAudit",
+    gitHub: "https://github.com/Kaushik-Shahare/MedAudit",
+    photos: [
+      "https://raw.githubusercontent.com/Kaushik-Shahare/MedAudit/refs/heads/main/ImagesAndVideos/Multi-AgentFlow.jpeg",
+    ],
+    techStack: ["Python", "Django", "LangGraph", "PostgreSQL", "NFC"],
+    libraries: [
+      "LangGraph",
+      "OpenAI",
+      "Pandas",
+      "NumPy",
+      "Django REST Framework",
+      "pdfplumber",
+    ],
+    additionalInfo:
+      "Won 2nd Runner-Up (3rd place) among teams from various colleges across India. The system automates EHR validation, reduces denial risks, and saves hospitals over 1,900 hours per month by streamlining insurance processing and OPD check-ins.",
+  },
+  {
+    id: 9,
+    title: "VidPipeline",
+    shortDescription:
+      "Distributed video processing pipeline inspired by YouTube’s architecture with Kafka fanout, Celery workers, and parallel FFmpeg transcoding.",
+    detailedDescription:
+      "VidPipeline is a distributed video streaming and transcoding platform engineered to understand how large-scale platforms like YouTube, Twitch, Netflix, and Amazon Prime Video transform a single upload into multiple resolutions for adaptive streaming. The system supports chunked video uploads, preprocessing with ClamAV and H.264 compression, and parallel transcoding into 144p–1080p profiles using FFmpeg. Apache Kafka handles true fanout messaging by broadcasting each job to multiple consumer groups, while Celery queues ensure independent scaling for each resolution profile. All tasks run asynchronously, track their completion in the database, and automatically generate a master HLS playlist when all profiles finish. The project also includes full monitoring dashboards using Grafana, Prometheus, Loki, and Promtail.",
+    link: "https://youtu.be/HV2gCJDxWxw",
+    gitHub: "https://github.com/Kaushik-Shahare/VidPipeline",
+    photos: [
+      "https://raw.githubusercontent.com/Kaushik-Shahare/VidPipeline/main/Images&Videos/SystemDesign.png",
+    ],
+    videoEmbed: ["https://youtube.com/embed/HV2gCJDxWxw"],
+    techStack: [
+      "Python",
+      "FastAPI",
+      "Kafka",
+      "Celery",
+      "Redis",
+      "FFmpeg",
+      "PostgreSQL",
+      "Azure Blob Storage",
+    ],
+    libraries: [
+      "SQLAlchemy Async",
+      "Kafka-Python",
+      "Celery",
+      "Redis",
+      "FFmpeg",
+      "ClamAV",
+      "Prometheus",
+      "Grafana",
+      "Loki",
+      "Promtail",
+    ],
+    additionalInfo:
+      "Key features include chunked uploads, parallel HLS transcoding, fanout architecture using Kafka consumer groups, coordinated video completion logic, and adaptive bitrate streaming output. The system demonstrates real-world distributed system concepts such as event-driven pipelines, independent scaling per workload, async processing, and database-coordinated task completion.",
+    problemsFaced: [
+      "Originally designed using database row queues (IN_QUEUE/PROCESSING model), but this caused race conditions and required heavy row-level locking.",
+      "Chunk-level video transcoding was not implemented because it requires large compute resources—running multiple parallel FFmpeg jobs caused CPU throttling on local hardware.",
+      "Handling corrupted uploads, failed chunks, and ensuring idempotency required several design iterations.",
+      "Managing independent Kafka consumer groups per profile needed careful group/queue management to avoid message collisions.",
+      "FFmpeg performance varied significantly across profiles, requiring profile-specific scaling and concurrency tuning.",
+      "Full deployment was not feasible due to high cloud resource requirements (Kafka brokers, Celery workers, FFmpeg compute nodes, monitoring stack).",
+    ],
+  },
 ];
 
 export default projects;

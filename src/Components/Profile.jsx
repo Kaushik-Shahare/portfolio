@@ -1,5 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FaLinkedin, FaGithub, FaInstagram, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaGithub,
+  FaInstagram,
+  FaYoutube,
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import "./Profile.css";
 
@@ -9,7 +17,7 @@ const Profile = () => {
   const [tiltStyle, setTiltStyle] = useState({});
   const navigate = useNavigate();
   const skills = [
-    "Python", 
+    "Python",
     "Django",
     "PostgreSQL",
     "AI Agents",
@@ -97,6 +105,15 @@ const Profile = () => {
           <FaGithub size={24} className="sm:size-30" />
         </a>
         <a
+          href="https://www.youtube.com/@Kaushik-Shahare"
+          className="text-green-400 hover:text-green-500 transition-colors duration-300 hover:glow-green"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ filter: "drop-shadow(0 0 5px #00ff00)" }}
+        >
+          <FaYoutube size={24} className="sm:size-30" />
+        </a>
+        <a
           href="https://instagram.com/0_kaushik_"
           className="text-green-400 hover:text-green-500 transition-colors duration-300 hover:glow-green"
           target="_blank"
@@ -123,7 +140,9 @@ const Profile = () => {
               src="/FormalPhoto1.jpeg"
               alt="Kaushik Shahare - Software Engineer"
               className="object-cover w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 z-10 rounded-full"
-              style={{ filter: "grayscale(100%) drop-shadow(0 0 10px #00ff00)" }}
+              style={{
+                filter: "grayscale(100%) drop-shadow(0 0 10px #00ff00)",
+              }}
             />
             {/* Black Overlay */}
             <div className="absolute inset-0 bg-black bg-opacity-30 rounded-full z-20"></div>
@@ -175,14 +194,18 @@ const Profile = () => {
 
           {/* Contact Information */}
           <div className="space-y-4 pt-4">
-            <h3 className="text-xl text-green-400 font-semibold">Contact Information</h3>
+            <h3 className="text-xl text-green-400 font-semibold">
+              Contact Information
+            </h3>
             <div className="space-y-3">
               {/* Location */}
               <div className="flex items-center justify-center lg:justify-start gap-3">
                 <FaMapMarkerAlt className="text-green-400" size={18} />
-                <span className="text-green-200 text-base">Mumbai, Maharashtra, India</span>
+                <span className="text-green-200 text-base">
+                  Mumbai, Maharashtra, India
+                </span>
               </div>
-              
+
               {/* Email */}
               <div className="flex items-center justify-center lg:justify-start gap-3">
                 <FaEnvelope className="text-green-400" size={18} />
@@ -193,7 +216,7 @@ const Profile = () => {
                   kaushikshahare4@gmail.com
                 </a>
               </div>
-              
+
               {/* Phone */}
               <div className="flex items-center justify-center lg:justify-start gap-3">
                 <FaPhone className="text-green-400" size={18} />

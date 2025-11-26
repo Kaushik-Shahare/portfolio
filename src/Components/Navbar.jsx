@@ -54,9 +54,8 @@ const Navbar = () => {
 
       {/* Navigation Links */}
       <ul
-        className={`list-none flex-col md:flex-row md:flex gap-x-12 gap-y-2 mr-4 md:mr-10 ${
-          isOpen ? "flex" : "hidden"
-        } md:flex`}
+        className={`list-none flex-col md:flex-row md:flex gap-x-12 gap-y-2 mr-4 md:mr-10 ${isOpen ? "flex" : "hidden"
+          } md:flex`}
       >
         <li>
           <div
@@ -64,15 +63,6 @@ const Navbar = () => {
             className="text-green-400 text-xl no-underline hover:text-green-300 relative group cursor-pointer"
           >
             Home
-            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-green-300 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
-          </div>
-        </li>
-        <li>
-          <div
-            onClick={() => scrollToSection("about")}
-            className="text-green-400 text-xl no-underline hover:text-green-300 relative group cursor-pointer"
-          >
-            About Me
             <span className="absolute left-0 bottom-0 w-full h-0.5 bg-green-300 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
           </div>
         </li>
@@ -100,6 +90,16 @@ const Navbar = () => {
             className="text-green-400 text-xl no-underline hover:text-green-300 relative group cursor-pointer"
           >
             Awards
+            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-green-300 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+          </div>
+        </li>
+
+        <li>
+          <div
+            onClick={() => scrollToSection("about")}
+            className="text-green-400 text-xl no-underline hover:text-green-300 relative group cursor-pointer"
+          >
+            About Me
             <span className="absolute left-0 bottom-0 w-full h-0.5 bg-green-300 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
           </div>
         </li>

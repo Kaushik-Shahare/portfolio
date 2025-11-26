@@ -16,12 +16,19 @@ const ProjectDetails = () => {
 
   if (!project) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-black text-green-400 relative z-50" style={{ backgroundColor: '#000000' }}>
+      <div
+        className="flex flex-col items-center justify-center min-h-screen bg-black text-green-400 relative z-50"
+        style={{ backgroundColor: "#000000" }}
+      >
         <div className="absolute inset-0 bg-black bg-opacity-95 z-40"></div>
         <Navbar />
         <div className="text-center relative z-50">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 relative z-50">Project Not Found</h1>
-          <p className="text-green-300 mb-6 relative z-50 text-base">The project you're looking for doesn't exist.</p>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 relative z-50">
+            Project Not Found
+          </h1>
+          <p className="text-green-300 mb-6 relative z-50 text-base">
+            The project you're looking for doesn't exist.
+          </p>
           <Link
             to="/"
             className="px-4 py-2 bg-transparent border border-green-400 text-green-400 rounded hover:bg-green-400 hover:text-black transition-colors duration-300 relative z-50 text-sm"
@@ -110,7 +117,9 @@ const ProjectDetails = () => {
           {/* Media Carousel Section */}
           {(project.photos?.length > 0 || project.video?.length > 0) && (
             <div className="mb-16">
-              <h2 className="text-xl font-bold text-green-400 mb-6 text-center">Project Gallery</h2>
+              <h2 className="text-xl font-bold text-green-400 mb-6 text-center">
+                Project Gallery
+              </h2>
               <div className="bg-black bg-opacity-80 border border-green-400 rounded-lg p-6">
                 <Slider {...settings}>
                   {project.video?.map((video, index) => (
@@ -126,6 +135,19 @@ const ProjectDetails = () => {
                       </video>
                     </div>
                   ))}
+                  {project.videoEmbed && (
+                    <div className="px-2">
+                      <iframe
+                        className="w-full h-64 md:h-96 rounded-lg border border-green-400/20"
+                        src={project.videoEmbed}
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        onLoad={handleVideoPause}
+                      ></iframe>
+                    </div>
+                  )}
                   {project.photos?.map((photo, index) => (
                     <div key={`photo-${index}`} className="px-2">
                       <img
@@ -133,7 +155,7 @@ const ProjectDetails = () => {
                         alt={`${project.title} - Screenshot ${index + 1}`}
                         className="w-full h-auto rounded-lg border border-green-400/20"
                         onError={(e) => {
-                          e.target.style.display = 'none';
+                          e.target.style.display = "none";
                         }}
                       />
                     </div>
@@ -182,42 +204,65 @@ const ProjectDetails = () => {
 
           {/* Detailed Description Section */}
           <div className="bg-black bg-opacity-80 border border-green-400 rounded-lg p-6 mb-12">
-            <h2 className="text-xl font-bold text-green-400 mb-6">Project Overview</h2>
+            <h2 className="text-xl font-bold text-green-400 mb-6">
+              Project Overview
+            </h2>
             <div className="prose prose-invert prose-green max-w-none text-left">
               <ReactMarkdown
                 components={{
                   h1: ({ children, ...props }) => (
-                    <h1 className="text-xl font-bold text-green-400 mt-8 mb-4 text-left" {...props}>
+                    <h1
+                      className="text-xl font-bold text-green-400 mt-8 mb-4 text-left"
+                      {...props}
+                    >
                       {children}
                     </h1>
                   ),
                   h2: ({ children, ...props }) => (
-                    <h2 className="text-lg font-semibold text-green-300 mt-6 mb-3 text-left" {...props}>
+                    <h2
+                      className="text-lg font-semibold text-green-300 mt-6 mb-3 text-left"
+                      {...props}
+                    >
                       {children}
                     </h2>
                   ),
                   h3: ({ children, ...props }) => (
-                    <h3 className="text-base font-medium text-green-200 mt-4 mb-2 text-left" {...props}>
+                    <h3
+                      className="text-base font-medium text-green-200 mt-4 mb-2 text-left"
+                      {...props}
+                    >
                       {children}
                     </h3>
                   ),
                   p: ({ children, ...props }) => (
-                    <p className="text-gray-300 text-base leading-relaxed mb-4 text-left" {...props}>
+                    <p
+                      className="text-gray-300 text-base leading-relaxed mb-4 text-left"
+                      {...props}
+                    >
                       {children}
                     </p>
                   ),
                   li: ({ children, ...props }) => (
-                    <li className="text-gray-300 mb-1 text-left text-sm" {...props}>
+                    <li
+                      className="text-gray-300 mb-1 text-left text-sm"
+                      {...props}
+                    >
                       {children}
                     </li>
                   ),
                   ul: ({ children, ...props }) => (
-                    <ul className="list-disc list-inside mb-4 text-left" {...props}>
+                    <ul
+                      className="list-disc list-inside mb-4 text-left"
+                      {...props}
+                    >
                       {children}
                     </ul>
                   ),
                   ol: ({ children, ...props }) => (
-                    <ol className="list-decimal list-inside mb-4 text-left" {...props}>
+                    <ol
+                      className="list-decimal list-inside mb-4 text-left"
+                      {...props}
+                    >
                       {children}
                     </ol>
                   ),
@@ -227,7 +272,10 @@ const ProjectDetails = () => {
                     </strong>
                   ),
                   code: ({ children, ...props }) => (
-                    <code className="bg-gray-800 text-green-300 px-1 py-0.5 rounded text-sm" {...props}>
+                    <code
+                      className="bg-gray-800 text-green-300 px-1 py-0.5 rounded text-sm"
+                      {...props}
+                    >
                       {children}
                     </code>
                   ),
@@ -241,52 +289,81 @@ const ProjectDetails = () => {
           {/* Additional Information Section */}
           {project.additionalInfo && (
             <div className="bg-black bg-opacity-80 border border-green-400 rounded-lg p-6 mb-12">
-              <h2 className="text-xl font-bold text-green-400 mb-6">Additional Information</h2>
+              <h2 className="text-xl font-bold text-green-400 mb-6">
+                Additional Information
+              </h2>
               <div className="prose prose-invert prose-green max-w-none text-left">
                 <ReactMarkdown
                   components={{
                     h1: ({ children, ...props }) => (
-                      <h1 className="text-xl font-bold text-green-400 mt-8 mb-4 text-left" {...props}>
+                      <h1
+                        className="text-xl font-bold text-green-400 mt-8 mb-4 text-left"
+                        {...props}
+                      >
                         {children}
                       </h1>
                     ),
                     h2: ({ children, ...props }) => (
-                      <h2 className="text-lg font-semibold text-green-300 mt-6 mb-3 text-left" {...props}>
+                      <h2
+                        className="text-lg font-semibold text-green-300 mt-6 mb-3 text-left"
+                        {...props}
+                      >
                         {children}
                       </h2>
                     ),
                     h3: ({ children, ...props }) => (
-                      <h3 className="text-base font-medium text-green-200 mt-4 mb-2 text-left" {...props}>
+                      <h3
+                        className="text-base font-medium text-green-200 mt-4 mb-2 text-left"
+                        {...props}
+                      >
                         {children}
                       </h3>
                     ),
                     p: ({ children, ...props }) => (
-                      <p className="text-gray-300 text-base leading-relaxed mb-4 text-left" {...props}>
+                      <p
+                        className="text-gray-300 text-base leading-relaxed mb-4 text-left"
+                        {...props}
+                      >
                         {children}
                       </p>
                     ),
                     li: ({ children, ...props }) => (
-                      <li className="text-gray-300 mb-1 text-left text-sm" {...props}>
+                      <li
+                        className="text-gray-300 mb-1 text-left text-sm"
+                        {...props}
+                      >
                         {children}
                       </li>
                     ),
                     ul: ({ children, ...props }) => (
-                      <ul className="list-disc list-inside mb-4 text-left" {...props}>
+                      <ul
+                        className="list-disc list-inside mb-4 text-left"
+                        {...props}
+                      >
                         {children}
                       </ul>
                     ),
                     ol: ({ children, ...props }) => (
-                      <ol className="list-decimal list-inside mb-4 text-left" {...props}>
+                      <ol
+                        className="list-decimal list-inside mb-4 text-left"
+                        {...props}
+                      >
                         {children}
                       </ol>
                     ),
                     strong: ({ children, ...props }) => (
-                      <strong className="text-green-300 font-semibold" {...props}>
+                      <strong
+                        className="text-green-300 font-semibold"
+                        {...props}
+                      >
                         {children}
                       </strong>
                     ),
                     code: ({ children, ...props }) => (
-                      <code className="bg-gray-800 text-green-300 px-1 py-0.5 rounded text-sm" {...props}>
+                      <code
+                        className="bg-gray-800 text-green-300 px-1 py-0.5 rounded text-sm"
+                        {...props}
+                      >
                         {children}
                       </code>
                     ),
