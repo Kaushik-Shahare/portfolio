@@ -185,6 +185,9 @@ const Awards = () => {
                 onError={(e) => {
                   e.target.src = "/Profile1.png";
                 }}
+                style={{
+                  filter: "grayscale(100%) drop-shadow(0 0 10px #00ff00)",
+                }}
               />
             </div>
             <div className="text-center md:text-left">
