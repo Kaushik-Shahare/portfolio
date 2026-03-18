@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import {
   FaLinkedin,
   FaGithub,
@@ -12,8 +12,6 @@ import { useNavigate } from "react-router-dom";
 import "./Profile.css";
 
 const Profile = () => {
-  const [currentSkillIndex, setCurrentSkillIndex] = useState(0);
-  const [fade, setFade] = useState(true);
   const [tiltStyle, setTiltStyle] = useState({});
   const navigate = useNavigate();
   const skills = [
@@ -47,16 +45,7 @@ const Profile = () => {
     }
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFade(false);
-      setTimeout(() => {
-        setCurrentSkillIndex((prevIndex) => (prevIndex + 1) % skills.length);
-        setFade(true);
-      }, 500);
-    }, 2500);
-    return () => clearInterval(interval);
-  }, [skills.length]);
+
 
   const handleMouseMove = (e) => {
     if (imgRef.current) {

@@ -318,7 +318,7 @@ This project was developed to recreate the popular mobile game MiniMilitia on th
     gitHub: "https://github.com/Kaushik-Shahare/StyleSandbox",
     photos: [
       "https://raw.githubusercontent.com/Kaushik-Shahare/portfolio/main/src/Components/Projects/Images%26Videos/StyleSandbox/Banner.jpg",
-      "https://raw.githubusercontent.com/Kaushik-Shahare/portfolio/main/src/Components/Projects/Images%26Videos/Stylesandbox/History.jpg",
+      "https://raw.githubusercontent.com/Kaushik-Shahare/portfolio/main/src/Components/Projects/Images%26Videos/StyleSandbox/History.jpg",
     ],
     techStack: ["Next.js", "Tailwind CSS", "FastAPI", "Azure AI Foundry"],
     libraries: ["Diffusers", "OpenCV", "Compression(FFmpeg)"],
