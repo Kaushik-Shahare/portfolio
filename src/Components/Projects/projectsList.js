@@ -280,6 +280,51 @@ This project was developed to recreate the popular mobile game MiniMilitia on th
       "Full deployment was not feasible due to high cloud resource requirements (Kafka brokers, Celery workers, FFmpeg compute nodes, monitoring stack).",
     ],
   },
+  {
+    id: 10,
+    title: "LeadHubAuto",
+    shortDescription:
+      "AI-powered lead automation system with event-driven architecture and multi-agent workflows.",
+    detailedDescription:
+      "LeadHubAuto is a production-grade lead automation platform that handles email, WhatsApp communication, follow-ups, and meeting scheduling using an event-driven architecture. Built with FastAPI, LangGraph, Celery, and Kafka-style async processing, the system eliminates manual CRM workflows by orchestrating AI agents that classify, engage, and convert leads automatically.",
+    link: "https://leadhubauto.in",
+    gitHub: "https://github.com/Kaushik-Shahare/LeadAutomationSystem",
+    photos: [
+      `https://raw.githubusercontent.com/Kaushik-Shahare/portfolio/main/src/Components/Projects/Images%26Videos/LeadHubAuto/LeadHubAuto-AgentArchitecture.png`,
+      `https://raw.githubusercontent.com/Kaushik-Shahare/portfolio/main/src/Components/Projects/Images%26Videos/LeadHubAuto/Dashboard.png`,
+      `https://raw.githubusercontent.com/Kaushik-Shahare/portfolio/main/src/Components/Projects/Images%26Videos/LeadHubAuto/KnowledgeBase.png`,
+      `https://raw.githubusercontent.com/Kaushik-Shahare/portfolio/main/src/Components/Projects/Images%26Videos/LeadHubAuto/Connection-Gateway.png`,
+    ],
+    techStack: [
+      "Python",
+      "FastAPI",
+      "LangGraph",
+      "Celery",
+      "Redis",
+      "PostgreSQL",
+    ],
+    libraries: ["LangGraph", "Celery", "Redis", "Pandas", "pgvector"],
+    additionalInfo:
+      "Designed for real-world automation use cases including WhatsApp/email engagement, AI-based lead classification, and meeting scheduling with full observability using Grafana, Loki, and Promtail.",
+  },
+  {
+    id: 11,
+    title: "StyleSandbox",
+    shortDescription:
+      "AI-powered virtual try-on platform via browser extension for any fashion website.",
+    detailedDescription:
+      "StyleSandbox is a browser-based AI platform that allows users to virtually try clothes from any e-commerce website using their own photos. It integrates a Chrome extension with a FastAPI backend and AI inference pipeline (Azure Foundry) to generate realistic try-on outputs. The system removes purchase uncertainty and improves conversion by letting users visualize outfits before buying.",
+    link: "https://stylesandbox.app",
+    gitHub: "https://github.com/Kaushik-Shahare/StyleSandbox",
+    photos: [
+      "https://raw.githubusercontent.com/Kaushik-Shahare/portfolio/main/src/Components/Projects/Images%26Videos/StyleSandbox/Banner.jpg",
+      "https://raw.githubusercontent.com/Kaushik-Shahare/portfolio/main/src/Components/Projects/Images%26Videos/Stylesandbox/History.jpg",
+    ],
+    techStack: ["Next.js", "Tailwind CSS", "FastAPI", "Azure AI Foundry"],
+    libraries: ["Diffusers", "OpenCV", "Compression(FFmpeg)"],
+    additionalInfo:
+      "Live production system with credit-based monetization. Supports multi-garment try-on, browser extension injection, and async AI processing pipeline with Azure Blob storage.",
+  },
 ];
 
 export default projects;
